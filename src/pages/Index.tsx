@@ -19,7 +19,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-vinyl-black/80 via-vinyl-black/60 to-vinyl-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-retro-blue/90 via-vinyl-black/70 to-vinyl-black" />
         
         {/* Floating Vinyl */}
         <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block">
@@ -27,11 +27,11 @@ const Index = () => {
             <img 
               src={vinylRecord} 
               alt="Vinyl"
-              className="w-full h-full rounded-full object-cover"
+              className="w-full h-full rounded-full object-cover border-4 border-retro-blue/30"
             />
             <div className="absolute inset-0 rounded-full vinyl-grooves" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-accent flex items-center justify-center">
-              <Disc className="w-8 h-8 text-vinyl-black" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-retro-blue flex items-center justify-center">
+              <Disc className="w-8 h-8 text-primary-foreground" />
             </div>
           </div>
         </div>
@@ -40,8 +40,8 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
-              <Radio className="w-6 h-6 text-accent animate-pulse" />
-              <span className="text-accent font-body text-sm tracking-widest uppercase">
+              <Radio className="w-6 h-6 text-retro-blue animate-pulse" />
+              <span className="text-retro-blue font-body text-sm tracking-widest uppercase">
                 Музыкальный портал
               </span>
             </div>
@@ -65,7 +65,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/discography">
-                <Button variant="neon" size="xl">
+                <Button variant="vinyl" size="xl" className="border-retro-blue text-retro-blue hover:bg-retro-blue hover:text-primary-foreground">
                   Дискография
                 </Button>
               </Link>
@@ -187,7 +187,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/80 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-retro-blue to-retro-blue/80 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-4 border-accent animate-pulse" />
           <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border-4 border-accent animate-spin-slow" />
