@@ -24,12 +24,12 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Disc className="w-10 h-10 text-accent group-hover:animate-spin-slow transition-all" />
-              <div className="absolute inset-0 bg-primary rounded-full scale-50 opacity-50" />
+              <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-50" />
             </div>
             <div className="flex flex-col">
               <span className="font-display text-2xl tracking-wider">
-                <span className="text-accent">ORANGE</span>
-                <span className="text-primary-foreground">BLUE</span>
+                <span className="text-accent">orange</span>
+                <span className="text-retro-blue">blue</span>
               </span>
               <span className="text-xs text-muted-foreground tracking-widest">МУЗЫКА 80-х</span>
             </div>

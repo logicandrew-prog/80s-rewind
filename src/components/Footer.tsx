@@ -11,8 +11,8 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-3 group">
               <Disc className="w-8 h-8 text-accent" />
               <span className="font-display text-xl tracking-wider">
-                <span className="text-accent">ORANGE</span>
-                <span className="text-primary-foreground">BLUE</span>
+                <span className="text-accent">orange</span>
+                <span className="text-retro-blue">blue</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
