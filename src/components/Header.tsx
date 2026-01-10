@@ -17,21 +17,20 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-vinyl-black/95 backdrop-blur-md border-b border-accent/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-accent backdrop-blur-md border-b border-retro-blue/30">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <Disc className="w-10 h-10 text-accent group-hover:animate-spin-slow transition-all" />
+              <Disc className="w-10 h-10 text-retro-blue group-hover:animate-spin-slow transition-all" />
               <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-50" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-2xl tracking-wider">
-                <span className="text-accent">orange</span>
-                <span className="text-retro-blue">blue</span>
+              <span className="font-display text-2xl tracking-wider text-retro-blue">
+                orangeblue
               </span>
-              <span className="text-xs text-muted-foreground tracking-widest">МУЗЫКА 80-х</span>
+              <span className="text-xs text-retro-blue/70 tracking-widest">МУЗЫКА 80-х</span>
             </div>
           </Link>
 
@@ -43,13 +42,13 @@ const Header = () => {
                 to={link.path}
                 className={`font-body text-sm tracking-wide transition-all duration-300 relative group ${
                   isActive(link.path)
-                    ? "text-accent"
-                    : "text-primary-foreground/70 hover:text-accent"
+                    ? "text-retro-blue font-semibold"
+                    : "text-retro-blue/80 hover:text-retro-blue"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-retro-blue transition-all duration-300 ${
                     isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -60,7 +59,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-primary-foreground p-2"
+            className="md:hidden text-retro-blue p-2"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -68,7 +67,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-accent/20">
+          <nav className="md:hidden py-4 border-t border-retro-blue/20">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -76,8 +75,8 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block py-3 font-body text-sm tracking-wide transition-all ${
                   isActive(link.path)
-                    ? "text-accent"
-                    : "text-primary-foreground/70"
+                    ? "text-retro-blue font-semibold"
+                    : "text-retro-blue/70"
                 }`}
               >
                 {link.label}

@@ -135,7 +135,7 @@ const ArtistPage = () => {
                       <img 
                         src={photo.url} 
                         alt={photo.caption}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage"
                       />
                       <div className="absolute inset-0 bg-vinyl-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span className="text-primary-foreground text-sm">{photo.caption}</span>

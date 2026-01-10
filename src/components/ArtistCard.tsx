@@ -19,7 +19,7 @@ const ArtistCard = ({ id, name, genre, imageUrl }: ArtistCardProps) => {
         <img
           src={imageUrl}
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-vinyl-black via-vinyl-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
