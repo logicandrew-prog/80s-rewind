@@ -59,7 +59,7 @@ const Footer = () => {
           </p>
           <p className="text-xs flex items-center gap-2 text-vinyl-black"> Создано с
 ♥
-для любителей музыки 80-х<span className="text-orange-800">♥</span> для любителей музыки 80-х
+для любителей музыки 80-х<span className="text-orange-800">​</span> для любителей музыки 80-х
           </p>
         </div>
       </div>

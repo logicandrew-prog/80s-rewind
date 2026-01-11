@@ -44,7 +44,7 @@ const Index = () => {
               <span className="text-gradient-orange">80-х ГОДОВ</span>
             </h1>
             
-            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl max-w-xl mb-8 leading-relaxed text-muted">
               Погрузитесь в золотую эру синтезаторов, виниловых пластинок и неповторимого стиля. 
               Откройте для себя легендарных исполнителей, изменивших мир музыки навсегда.
             </p>
