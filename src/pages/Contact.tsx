@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send, MessageSquare, User, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,17 +13,15 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Пожалуйста, заполните все обязательные поля");
@@ -35,10 +32,8 @@ const Contact = () => {
     setIsSubmitted(true);
     toast.success("Сообщение отправлено!");
   };
-
   if (isSubmitted) {
-    return (
-      <Layout>
+    return <Layout>
         <section className="py-32 bg-background min-h-[70vh] flex items-center">
           <div className="container mx-auto px-4 text-center">
             <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
@@ -51,25 +46,24 @@ const Contact = () => {
               Мы получили ваше сообщение и ответим вам в ближайшее время. 
               Благодарим за интерес к музыке 80-х!
             </p>
-            <Button 
-              variant="retro" 
-              onClick={() => {
-                setIsSubmitted(false);
-                setFormData({ name: "", email: "", subject: "", message: "" });
-              }}
-            >
+            <Button variant="retro" onClick={() => {
+            setIsSubmitted(false);
+            setFormData({
+              name: "",
+              email: "",
+              subject: "",
+              message: ""
+            });
+          }}>
               Отправить ещё
             </Button>
           </div>
         </section>
-      </Layout>
-    );
+      </Layout>;
   }
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
-      <section className="py-16 bg-vinyl-black">
+      <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <MessageSquare className="w-6 h-6 text-accent" />
@@ -101,15 +95,7 @@ const Contact = () => {
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Ваше имя"
-                        className="pl-10 bg-secondary border-border focus:border-accent"
-                        required
-                      />
+                      <Input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Ваше имя" className="pl-10 bg-secondary border-border focus:border-accent" required />
                     </div>
                   </div>
                   <div>
@@ -118,15 +104,7 @@ const Contact = () => {
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your@email.com"
-                        className="pl-10 bg-secondary border-border focus:border-accent"
-                        required
-                      />
+                      <Input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" className="pl-10 bg-secondary border-border focus:border-accent" required />
                     </div>
                   </div>
                 </div>
@@ -135,29 +113,14 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Тема сообщения
                   </label>
-                  <Input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="О чём вы хотите написать?"
-                    className="bg-secondary border-border focus:border-accent"
-                  />
+                  <Input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="О чём вы хотите написать?" className="bg-secondary border-border focus:border-accent" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Сообщение *
                   </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Расскажите нам..."
-                    rows={6}
-                    className="bg-secondary border-border focus:border-accent resize-none"
-                    required
-                  />
+                  <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Расскажите нам..." rows={6} className="bg-secondary border-border focus:border-accent resize-none" required />
                 </div>
 
                 <Button type="submit" variant="retro" size="lg" className="w-full sm:w-auto">
@@ -179,10 +142,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Email</h4>
-                      <a 
-                        href="mailto:info@orangeblue.music" 
-                        className="text-accent hover:underline"
-                      >
+                      <a href="mailto:info@orangeblue.music" className="text-accent hover:underline">
                         info@orangeblue.music
                       </a>
                     </div>
@@ -202,8 +162,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Contact;
