@@ -86,7 +86,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {genres.map((genre, index) => <div key={genre.name} className="bg-card border border-border rounded-lg p-8 card-hover relative overflow-hidden group">
                 {/* Index Number */}
-                <span className="absolute top-4 right-4 font-display text-6xl text-accent/10 group-hover:text-accent/20 transition-colors">
+                <span className="absolute top-4 right-4 font-display text-6xl transition-colors text-[#ff8c00]/[0.19]">
                   0{index + 1}
                 </span>
                 
@@ -100,7 +100,7 @@ const Index = () => {
                       {genre.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {genre.artists.map(artist => <span key={artist} className="text-xs px-3 py-1 bg-accent/10 rounded-full border border-accent/20 text-vinyl-groove">
+                      {genre.artists.map(artist => <span key={artist} className="text-xs px-3 py-1 rounded-full border border-accent/20 text-vinyl-groove bg-[#ff8c00]/10">
                           {artist}
                         </span>)}
                     </div>
