@@ -2,12 +2,10 @@ import Layout from "@/components/Layout";
 import ArtistCard from "@/components/ArtistCard";
 import { artists } from "@/data/artists";
 import { Music } from "lucide-react";
-
 const Artists = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
-      <section className="py-16 bg-vinyl-black">
+      <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <Music className="w-6 h-6 text-accent" />
@@ -29,20 +27,10 @@ const Artists = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {artists.map((artist) => (
-              <ArtistCard
-                key={artist.id}
-                id={artist.id}
-                name={artist.name}
-                genre={artist.genre.split(" / ")[0]}
-                imageUrl={artist.photos[0].url}
-              />
-            ))}
+            {artists.map(artist => <ArtistCard key={artist.id} id={artist.id} name={artist.name} genre={artist.genre.split(" / ")[0]} imageUrl={artist.photos[0].url} />)}
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Artists;
