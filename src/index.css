@@ -20,9 +20,9 @@
     --primary: 220 80% 25%;
     --primary-foreground: 0 0% 98%;
 
-    /* Orange - Accent */
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 98%;
+    /* Orange - Accent #FF9A00 */
+    --accent: 36 100% 50%;
+    --accent-foreground: 210 100% 20%;
 
     --secondary: 0 0% 92%;
     --secondary-foreground: 0 0% 15%;
@@ -42,8 +42,8 @@
     /* Custom 80s Colors */
     --vinyl-black: 0 0% 8%;
     --vinyl-groove: 0 0% 20%;
-    --neon-orange: 25 100% 55%;
-    --deep-blue: 220 80% 25%;
+    --neon-orange: 36 100% 50%;
+    --deep-blue: 210 100% 20%;
     --retro-gray: 0 0% 45%;
     --cream: 40 30% 96%;
 

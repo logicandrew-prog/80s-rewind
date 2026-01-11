@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <Disc className="w-8 h-8 text-retro-blue" />
-              <span className="font-display text-xl tracking-wider text-retro-blue">
+              <Disc className="w-10 h-10 text-retro-blue" />
+              <span className="font-display text-2xl font-bold tracking-wider text-retro-blue">
                 orangeblue
               </span>
             </Link>
@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-display text-lg text-retro-blue tracking-wider">НАВИГАЦИЯ</h3>
+            <h3 className="font-display text-xl font-bold text-retro-blue tracking-wider">НАВИГАЦИЯ</h3>
             <nav className="flex flex-col gap-2">
               <Link to="/" className="text-retro-blue/80 hover:text-retro-blue transition-colors text-sm">
                 Главная
@@ -44,7 +44,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="font-display text-lg text-retro-blue tracking-wider">КОНТАКТЫ</h3>
+            <h3 className="font-display text-xl font-bold text-retro-blue tracking-wider">КОНТАКТЫ</h3>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">
               <Mail className="w-4 h-4 text-retro-blue" />
               <span>info@orangeblue.music</span>
