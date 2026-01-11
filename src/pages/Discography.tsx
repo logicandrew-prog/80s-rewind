@@ -28,13 +28,13 @@ const Discography = () => {
       </section>
 
       {/* Discography Grid */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-orange-100">
         <div className="container mx-auto px-4">
           {artists.map(artist => <div key={artist.id} className="mb-16">
               {/* Artist Header */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Music className="w-6 h-6 text-accent" />
+                  <Music className="w-6 h-6 text-[#ff8c00]" />
                 </div>
                 <div>
                   <h2 className="font-display text-3xl text-foreground">{artist.name}</h2>
