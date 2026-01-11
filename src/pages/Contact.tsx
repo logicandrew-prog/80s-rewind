@@ -66,8 +66,8 @@ const Contact = () => {
       <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
-            <MessageSquare className="w-6 h-6 text-accent" />
-            <span className="text-accent text-sm tracking-widest uppercase font-body">
+            <MessageSquare className="w-6 h-6 text-[#ff8c00]" />
+            <span className="text-sm tracking-widest uppercase font-body text-[#ff8c00]">
               Напишите нам
             </span>
           </div>
