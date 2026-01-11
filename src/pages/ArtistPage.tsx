@@ -3,14 +3,15 @@ import { ArrowLeft, Calendar, MapPin, Users, Disc, Star } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { getArtistById } from "@/data/artists";
-
 const ArtistPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   const artist = getArtistById(id || "");
-
   if (!artist) {
-    return (
-      <Layout>
+    return <Layout>
         <div className="min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
             <h1 className="font-display text-4xl text-foreground mb-4">
@@ -24,25 +25,18 @@ const ArtistPage = () => {
             </Link>
           </div>
         </div>
-      </Layout>
-    );
+      </Layout>;
   }
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${artist.photos[0].url})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${artist.photos[0].url})`
+      }} />
         <div className="absolute inset-0 bg-gradient-to-t from-vinyl-black via-vinyl-black/70 to-transparent" />
         
         <div className="container mx-auto px-4 py-12 relative z-10">
-          <Link 
-            to="/artists" 
-            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-6"
-          >
+          <Link to="/artists" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-6">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm font-body">Все исполнители</span>
           </Link>
@@ -69,7 +63,7 @@ const ArtistPage = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-orange-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column - Info */}
@@ -83,24 +77,17 @@ const ArtistPage = () => {
               </div>
 
               {/* Members */}
-              {artist.members && (
-                <div>
+              {artist.members && <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Users className="w-5 h-5 text-accent" />
                     <h2 className="font-display text-3xl text-foreground">СОСТАВ</h2>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    {artist.members.map((member) => (
-                      <span 
-                        key={member}
-                        className="px-4 py-2 bg-secondary rounded-lg text-foreground text-sm border border-border"
-                      >
+                    {artist.members.map(member => <span key={member} className="px-4 py-2 rounded-lg text-foreground text-sm border border-border bg-stone-50">
                         {member}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
-                </div>
-              )}
+                </div>}
 
               {/* Fun Facts */}
               <div>
@@ -109,17 +96,12 @@ const ArtistPage = () => {
                   <h2 className="font-display text-3xl text-foreground">ИНТЕРЕСНЫЕ ФАКТЫ</h2>
                 </div>
                 <ul className="space-y-4">
-                  {artist.funFacts.map((fact, index) => (
-                    <li 
-                      key={index}
-                      className="flex gap-4 p-4 bg-secondary rounded-lg border border-border"
-                    >
+                  {artist.funFacts.map((fact, index) => <li key={index} className="flex gap-4 p-4 rounded-lg border border-border bg-stone-50">
                       <span className="font-display text-2xl text-accent">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span className="text-muted-foreground">{fact}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -127,21 +109,12 @@ const ArtistPage = () => {
               <div>
                 <h2 className="font-display text-3xl text-foreground mb-6">ФОТОГРАФИИ</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {artist.photos.map((photo, index) => (
-                    <div 
-                      key={index}
-                      className="relative group overflow-hidden rounded-lg aspect-square"
-                    >
-                      <img 
-                        src={photo.url} 
-                        alt={photo.caption}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage"
-                      />
+                  {artist.photos.map((photo, index) => <div key={index} className="relative group overflow-hidden rounded-lg aspect-square">
+                      <img src={photo.url} alt={photo.caption} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage" />
                       <div className="absolute inset-0 bg-vinyl-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span className="text-primary-foreground text-sm">{photo.caption}</span>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -152,24 +125,15 @@ const ArtistPage = () => {
                 <div className="bg-card border border-border rounded-lg p-6">
                   <h3 className="font-display text-2xl text-foreground mb-6">ДИСКОГРАФИЯ</h3>
                   <div className="space-y-4">
-                    {artist.albums.slice(0, 4).map((album) => (
-                      <div 
-                        key={album.title}
-                        className="flex gap-4 p-3 bg-secondary rounded-lg group hover:bg-accent/10 transition-colors cursor-pointer"
-                      >
-                        <img 
-                          src={album.cover} 
-                          alt={album.title}
-                          className="w-16 h-16 rounded object-cover"
-                        />
+                    {artist.albums.slice(0, 4).map(album => <div key={album.title} className="flex gap-4 p-3 bg-secondary rounded-lg group hover:bg-accent/10 transition-colors cursor-pointer">
+                        <img src={album.cover} alt={album.title} className="w-16 h-16 rounded object-cover" />
                         <div>
                           <h4 className="font-body font-medium text-foreground group-hover:text-accent transition-colors">
                             {album.title}
                           </h4>
                           <span className="text-muted-foreground text-sm">{album.year}</span>
                         </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                   
                   <Link to="/discography" className="block mt-6">
@@ -183,8 +147,6 @@ const ArtistPage = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default ArtistPage;
