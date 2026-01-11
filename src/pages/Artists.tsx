@@ -16,7 +16,7 @@ const Artists = () => {
           <h1 className="font-display text-5xl md:text-7xl text-primary-foreground">
             ИСПОЛНИТЕЛИ
           </h1>
-          <p className="text-muted-foreground mt-4 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-muted">
             Легендарные группы и артисты 80-х годов. Нажмите на карточку исполнителя, 
             чтобы узнать его историю, дискографию и интересные факты.
           </p>
