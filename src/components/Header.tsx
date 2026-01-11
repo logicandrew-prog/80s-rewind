@@ -34,7 +34,7 @@ const Header = () => {
               <span className="font-display font-bold tracking-wider text-retro-blue text-4xl">
                 orangeblue
               </span>
-              <span className="text-xs tracking-widest font-semibold text-vinyl-groove font-serif"> music of the 80's</span>
+              <span className="text-xs tracking-widest font-semibold font-serif text-vinyl-black"> music of the 80's</span>
             </div>
           </Link>
 
