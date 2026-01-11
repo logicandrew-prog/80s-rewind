@@ -43,7 +43,7 @@ const Gallery = () => {
                 <img src={photo.url} alt={photo.caption} className="w-full object-cover transition-transform duration-500 group-hover:scale-105 photo-vintage" />
                 <div className="absolute inset-0 bg-gradient-to-t from-vinyl-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="text-accent text-xs tracking-wide uppercase">
+                    <span className="text-xs tracking-wide uppercase text-[#ff8c00]">
                       {photo.artist}
                     </span>
                     <p className="text-primary-foreground text-sm mt-1">
