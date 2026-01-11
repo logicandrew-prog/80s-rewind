@@ -21,7 +21,7 @@ const Index = () => {
         <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block">
           <div className="relative w-64 h-64 animate-spin-slow">
             <img src={vinylRecord} alt="Vinyl" className="w-full h-full rounded-full object-cover border-4 border-retro-blue/30" />
-            <div className="absolute inset-0 rounded-full vinyl-grooves" />
+            <div className="absolute inset-0 rounded-full vinyl-grooves bg-[#ff8c00]/[0.34]" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-retro-blue flex items-center justify-center">
               <Disc className="w-8 h-8 text-primary-foreground" />
             </div>
