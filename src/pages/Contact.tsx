@@ -132,7 +132,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="lg:pl-12">
-              <div className="bg-card border border-border rounded-lg p-8 mb-8">
+              <div className="border border-border rounded-lg p-8 mb-8 bg-retro-cream">
                 <h3 className="font-display text-2xl text-foreground mb-6">КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
                 
                 <div className="space-y-6">
