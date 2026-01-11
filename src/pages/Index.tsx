@@ -123,7 +123,7 @@ const Index = () => {
             </div>
             <Link to="/artists" className="text-accent hover:text-accent/80 transition-colors flex items-center gap-2 mt-4 md:mt-0">
               <span className="font-body text-sm text-vinyl-black">Смотреть всех</span>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 text-[#ff8c00]" />
             </Link>
           </div>
 
