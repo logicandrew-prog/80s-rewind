@@ -45,7 +45,7 @@ const ArtistPage = () => {
             {artist.name}
           </h1>
           
-          <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-6 text-retro-cream">
             <div className="flex items-center gap-2">
               <Disc className="w-4 h-4 text-accent" />
               <span className="text-sm">{artist.genre}</span>
@@ -83,7 +83,7 @@ const ArtistPage = () => {
                     <h2 className="font-display text-3xl text-foreground">СОСТАВ</h2>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    {artist.members.map(member => <span key={member} className="px-4 py-2 rounded-lg text-foreground text-sm border border-border bg-stone-50">
+                    {artist.members.map(member => <span key={member} className="px-4 py-2 rounded-lg text-foreground text-sm border border-border bg-[#ff8c00]">
                         {member}
                       </span>)}
                   </div>
@@ -122,7 +122,7 @@ const ArtistPage = () => {
             {/* Right Column - Discography Sidebar */}
             <div>
               <div className="sticky top-24">
-                <div className="bg-card border border-border rounded-lg p-6">
+                <div className="border border-border rounded-lg p-6 bg-stone-50">
                   <h3 className="font-display text-2xl text-foreground mb-6">ДИСКОГРАФИЯ</h3>
                   <div className="space-y-4">
                     {artist.albums.slice(0, 4).map(album => <div key={album.title} className="flex gap-4 p-3 bg-secondary rounded-lg group hover:bg-accent/10 transition-colors cursor-pointer">
