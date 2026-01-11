@@ -84,7 +84,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {genres.map((genre, index) => <div key={genre.name} className="bg-card border border-border rounded-lg p-8 card-hover relative overflow-hidden group">
+            {genres.map((genre, index) => <div key={genre.name} className="border border-border rounded-lg p-8 card-hover relative overflow-hidden group bg-retro-cream">
                 {/* Index Number */}
                 <span className="absolute top-4 right-4 font-display text-6xl transition-colors text-[#ff8c00]/[0.19]">
                   0{index + 1}
