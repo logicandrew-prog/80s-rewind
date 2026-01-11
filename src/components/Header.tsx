@@ -28,7 +28,7 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3 group mb-0">
             <div className="relative">
               <Disc className="w-12 h-12 group-hover:animate-spin-slow transition-all text-primary-foreground pb-0 border-8 border-dashed border-vinyl-groove shadow-none rounded-full mb-[12px]" />
-              <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-65 border-solid border-8 border-retro-cream" />
+              <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-65 border-solid border-8 border-retro-cream mb-[12px]" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold tracking-wider text-retro-blue text-5xl">
