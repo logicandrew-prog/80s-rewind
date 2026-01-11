@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
               <Disc className="opacity-80 text-vinyl-black w-[20px] h-[20px] pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid" />
-              <span className="font-display font-bold tracking-wider text-retro-blue text-left text-3xl">orangeblue</span>
+              <span className="font-display font-bold tracking-wider text-left text-3xl text-slate-700">orangeblue</span>
             </Link>
             <p className="text-sm leading-relaxed text-vinyl-black">
               Портал, посвящённый легендарной музыке 80-х годов. 
@@ -18,7 +18,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-display text-xl font-bold text-retro-blue tracking-wider">НАВИГАЦИЯ</h3>
+            <h3 className="font-display text-xl font-bold tracking-wider text-gray-700">​Site map   </h3>
             <nav className="flex flex-col gap-2">
               <Link to="/" className="transition-colors text-sm text-vinyl-black">
                 Главная
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="font-display text-xl font-bold text-retro-blue tracking-wider">КОНТАКТЫ</h3>
+            <h3 className="font-display text-xl font-bold tracking-wider text-slate-700">Contacts</h3>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">
               <Mail className="w-4 h-4 text-retro-blue" />
               <span className="text-vinyl-black">info@offmail.ru</span>

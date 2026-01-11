@@ -31,7 +31,7 @@ const Header = () => {
               <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-65 border-solid border-8 border-retro-cream mb-[12px] text-accent" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold tracking-wider text-retro-blue text-5xl">
+              <span className="font-bold tracking-wider text-5xl font-sans text-slate-700">
                 orangeblue
               </span>
               <span className="text-xs tracking-widest font-semibold font-serif text-vinyl-black text-right pt-[2px] py-0"> music of the 80's</span>
