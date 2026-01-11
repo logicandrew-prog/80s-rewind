@@ -21,7 +21,7 @@ const Header = () => {
     label: "Обратная связь"
   }];
   const isActive = (path: string) => location.pathname === path;
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-accent backdrop-blur-md border-b border-retro-blue/30">
+  return <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-retro-blue/30 bg-[#ff8c00]">
       <div className="container mx-auto px-4">
         <div className="h-20 text-[#ff8c00] py-0 flex items-end justify-between mt-[10px] mb-[30px] pb-0">
           {/* Logo */}
