@@ -28,7 +28,7 @@ const Gallery = () => {
           <h1 className="font-display text-5xl md:text-7xl text-primary-foreground">
             ГАЛЕРЕЯ
           </h1>
-          <p className="text-muted-foreground mt-4 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-muted">
             Концертные, студийные и редкие фотографии легендарных исполнителей 80-х годов. 
             Нажмите на фото для просмотра в полном размере.
           </p>
