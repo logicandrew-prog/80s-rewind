@@ -79,7 +79,7 @@ const ArtistPage = () => {
               {/* Members */}
               {artist.members && <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <Users className="w-5 h-5 text-accent" />
+                    <Users className="w-5 h-5 text-[#ff8c00]" />
                     <h2 className="font-display text-3xl text-foreground">СОСТАВ</h2>
                   </div>
                   <div className="flex flex-wrap gap-3">
@@ -92,12 +92,12 @@ const ArtistPage = () => {
               {/* Fun Facts */}
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <Star className="w-5 h-5 text-accent" />
+                  <Star className="w-5 h-5 text-[#ff8c00]" />
                   <h2 className="font-display text-3xl text-foreground">ИНТЕРЕСНЫЕ ФАКТЫ</h2>
                 </div>
                 <ul className="space-y-4">
                   {artist.funFacts.map((fact, index) => <li key={index} className="flex gap-4 p-4 rounded-lg border border-border bg-stone-50">
-                      <span className="font-display text-2xl text-accent">
+                      <span className="font-display text-2xl text-[#ff8c00]">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span className="text-muted-foreground">{fact}</span>
