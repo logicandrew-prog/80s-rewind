@@ -116,7 +116,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
-              <span className="text-accent text-sm tracking-widest uppercase font-body">Легенды эпохи</span>
+              <span className="text-sm tracking-widest uppercase font-body text-vinyl-groove">Легенды эпохи</span>
               <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
                 ИСПОЛНИТЕЛИ
               </h2>
