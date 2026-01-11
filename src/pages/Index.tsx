@@ -100,7 +100,7 @@ const Index = () => {
                       {genre.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {genre.artists.map(artist => <span key={artist} className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/20">
+                      {genre.artists.map(artist => <span key={artist} className="text-xs px-3 py-1 bg-accent/10 rounded-full border border-accent/20 text-vinyl-groove">
                           {artist}
                         </span>)}
                     </div>
