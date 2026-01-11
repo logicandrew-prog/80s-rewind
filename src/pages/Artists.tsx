@@ -24,7 +24,7 @@ const Artists = () => {
       </section>
 
       {/* Artists Grid */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-orange-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {artists.map(artist => <ArtistCard key={artist.id} id={artist.id} name={artist.name} genre={artist.genre.split(" / ")[0]} imageUrl={artist.photos[0].url} />)}
