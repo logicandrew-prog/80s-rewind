@@ -1,26 +1,21 @@
 import { Link } from "react-router-dom";
 import { Music } from "lucide-react";
-
 interface ArtistCardProps {
   id: string;
   name: string;
   genre: string;
   imageUrl: string;
 }
-
-const ArtistCard = ({ id, name, genre, imageUrl }: ArtistCardProps) => {
-  return (
-    <Link
-      to={`/artist/${id}`}
-      className="group relative overflow-hidden rounded-lg bg-card border border-border card-hover block"
-    >
+const ArtistCard = ({
+  id,
+  name,
+  genre,
+  imageUrl
+}: ArtistCardProps) => {
+  return <Link to={`/artist/${id}`} className="group relative overflow-hidden rounded-lg bg-card border border-border card-hover block">
       {/* Image */}
       <div className="aspect-square overflow-hidden">
-        <img
-          src={imageUrl}
-          alt={name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage"
-        />
+        <img src={imageUrl} alt={name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 photo-vintage" />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-vinyl-black via-vinyl-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
       </div>
@@ -44,9 +39,7 @@ const ArtistCard = ({ id, name, genre, imageUrl }: ArtistCardProps) => {
       </div>
 
       {/* Hover Border Effect */}
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent transition-colors rounded-lg" />
-    </Link>
-  );
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent transition-colors rounded-lg text-[#ff8c00]" />
+    </Link>;
 };
-
 export default ArtistCard;
