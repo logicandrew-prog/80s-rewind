@@ -77,7 +77,7 @@ const Index = () => {
       <section className="py-20 bg-secondary text-retro-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 bg-retro-cream">
-            <span className="text-accent text-sm tracking-widest uppercase font-body">Жанры эпохи</span>
+            <span className="text-sm tracking-widest uppercase font-body text-vinyl-black">Жанры эпохи</span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
               СТИЛИ И НАПРАВЛЕНИЯ
             </h2>
@@ -138,19 +138,19 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <span className="font-display text-5xl text-accent">10+</span>
+              <span className="font-display text-5xl text-[#ff8c00]">10+</span>
               <p className="text-sm mt-2 text-retro-cream">Исполнителей</p>
             </div>
             <div>
-              <span className="font-display text-5xl text-accent">50+</span>
+              <span className="font-display text-5xl text-[#ff8c00]">50+</span>
               <p className="text-sm mt-2 text-retro-cream">Альбомов</p>
             </div>
             <div>
-              <span className="font-display text-5xl text-accent">200+</span>
+              <span className="font-display text-5xl text-[#ff8c00]">200+</span>
               <p className="text-sm mt-2 text-retro-cream">Треков</p>
             </div>
             <div>
-              <span className="font-display text-5xl text-accent">80-е</span>
+              <span className="font-display text-5xl text-[#ff8c00]">80-е</span>
               <p className="text-sm mt-2 text-retro-cream">Золотая эра</p>
             </div>
           </div>
