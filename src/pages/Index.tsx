@@ -159,8 +159,8 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-retro-blue to-retro-blue/80 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-4 border-accent animate-pulse" />
+        <div className="absolute inset-0 opacity-10 bg-[#ff8c00] text-muted">
+          
           <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border-4 border-accent animate-spin-slow" />
         </div>
         
