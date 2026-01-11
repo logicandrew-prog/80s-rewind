@@ -60,7 +60,7 @@ const Discography = () => {
 
                         {/* Album Info Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <span className="text-accent text-sm font-display">{album.year}</span>
+                          <span className="text-sm font-display text-[#ff8c00]">{album.year}</span>
                           <h3 className="font-display text-xl text-primary-foreground">{album.title}</h3>
                         </div>
                       </div>
