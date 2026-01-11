@@ -159,16 +159,16 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-retro-blue to-retro-blue/80 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-4 border-accent animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border-4 border-accent animate-spin-slow" />
+        <div className="absolute inset-0 opacity-100 text-muted bg-orange-100">
+          
+          
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="font-display text-4xl md:text-5xl text-primary-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-5xl mb-6 text-vinyl-black">
             ОКУНИТЕСЬ В АТМОСФЕРУ 80-х
           </h2>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-8">
+          <p className="max-w-2xl mx-auto mb-8 text-vinyl-groove">
             Исследуйте галерею редких фотографий, узнайте интересные факты о любимых группах 
             и погрузитесь в эпоху, которая изменила музыку навсегда.
           </p>
