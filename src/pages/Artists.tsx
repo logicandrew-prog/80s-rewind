@@ -3,7 +3,7 @@ import ArtistCard from "@/components/ArtistCard";
 import { artists } from "@/data/artists";
 import { Music } from "lucide-react";
 const Artists = () => {
-  return <Layout>
+  return <Layout className="bg-slate-800">
       {/* Hero */}
       <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
