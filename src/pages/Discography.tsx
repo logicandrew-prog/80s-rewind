@@ -2,22 +2,14 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import { artists } from "@/data/artists";
 import { Disc, Music, ChevronDown, ChevronUp } from "lucide-react";
-
 const Discography = () => {
   const [expandedAlbums, setExpandedAlbums] = useState<string[]>([]);
-
   const toggleAlbum = (albumKey: string) => {
-    setExpandedAlbums(prev => 
-      prev.includes(albumKey) 
-        ? prev.filter(k => k !== albumKey)
-        : [...prev, albumKey]
-    );
+    setExpandedAlbums(prev => prev.includes(albumKey) ? prev.filter(k => k !== albumKey) : [...prev, albumKey]);
   };
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
-      <section className="py-16 bg-vinyl-black">
+      <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <Disc className="w-6 h-6 text-accent" />
@@ -38,8 +30,7 @@ const Discography = () => {
       {/* Discography Grid */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          {artists.map((artist) => (
-            <div key={artist.id} className="mb-16">
+          {artists.map(artist => <div key={artist.id} className="mb-16">
               {/* Artist Header */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
@@ -53,22 +44,13 @@ const Discography = () => {
 
               {/* Albums Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {artist.albums.map((album) => {
-                  const albumKey = `${artist.id}-${album.title}`;
-                  const isExpanded = expandedAlbums.includes(albumKey);
-
-                  return (
-                    <div 
-                      key={albumKey}
-                      className="bg-card border border-border rounded-lg overflow-hidden card-hover"
-                    >
+                {artist.albums.map(album => {
+              const albumKey = `${artist.id}-${album.title}`;
+              const isExpanded = expandedAlbums.includes(albumKey);
+              return <div key={albumKey} className="bg-card border border-border rounded-lg overflow-hidden card-hover">
                       {/* Album Cover */}
                       <div className="relative aspect-square overflow-hidden">
-                        <img 
-                          src={album.cover} 
-                          alt={album.title}
-                          className="w-full h-full object-cover"
-                        />
+                        <img src={album.cover} alt={album.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-vinyl-black/80 to-transparent" />
                         
                         {/* Vinyl Overlay */}
@@ -84,48 +66,30 @@ const Discography = () => {
                       </div>
 
                       {/* Tracks Toggle */}
-                      <button 
-                        onClick={() => toggleAlbum(albumKey)}
-                        className="w-full p-4 flex items-center justify-between bg-secondary hover:bg-accent/10 transition-colors"
-                      >
+                      <button onClick={() => toggleAlbum(albumKey)} className="w-full p-4 flex items-center justify-between bg-secondary hover:bg-accent/10 transition-colors">
                         <span className="text-sm text-muted-foreground">
                           {album.tracks.length} треков
                         </span>
-                        {isExpanded ? (
-                          <ChevronUp className="w-4 h-4 text-accent" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-accent" />
-                        )}
+                        {isExpanded ? <ChevronUp className="w-4 h-4 text-accent" /> : <ChevronDown className="w-4 h-4 text-accent" />}
                       </button>
 
                       {/* Tracks List */}
-                      {isExpanded && (
-                        <div className="p-4 border-t border-border">
+                      {isExpanded && <div className="p-4 border-t border-border">
                           <ol className="space-y-2">
-                            {album.tracks.map((track, index) => (
-                              <li 
-                                key={index}
-                                className="flex items-center gap-3 text-sm"
-                              >
+                            {album.tracks.map((track, index) => <li key={index} className="flex items-center gap-3 text-sm">
                                 <span className="text-accent font-display w-6">
                                   {String(index + 1).padStart(2, '0')}
                                 </span>
                                 <span className="text-muted-foreground">{track}</span>
-                              </li>
-                            ))}
+                              </li>)}
                           </ol>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                        </div>}
+                    </div>;
+            })}
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Discography;
