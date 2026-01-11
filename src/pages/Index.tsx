@@ -76,7 +76,7 @@ const Index = () => {
       {/* Music Styles Section */}
       <section className="py-20 bg-secondary text-retro-cream">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 bg-retro-cream">
             <span className="text-accent text-sm tracking-widest uppercase font-body">Жанры эпохи</span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
               СТИЛИ И НАПРАВЛЕНИЯ
