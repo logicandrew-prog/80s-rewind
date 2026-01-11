@@ -74,9 +74,9 @@ const Index = () => {
       </section>
 
       {/* Music Styles Section */}
-      <section className="py-20 text-secondary-foreground bg-retro-cream">
+      <section className="py-20 text-primary bg-orange-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 bg-retro-cream">
+          <div className="text-center mb-16 bg-orange-50">
             <span className="text-sm tracking-widest uppercase font-body text-vinyl-groove">Жанры эпохи</span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
               СТИЛИ И НАПРАВЛЕНИЯ
@@ -84,7 +84,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {genres.map((genre, index) => <div key={genre.name} className="border border-border rounded-lg p-8 card-hover relative overflow-hidden group bg-white">
+            {genres.map((genre, index) => <div key={genre.name} className="border border-border rounded-lg p-8 card-hover relative overflow-hidden group bg-retro-cream">
                 {/* Index Number */}
                 <span className="absolute top-4 right-4 font-display text-6xl transition-colors text-[#ff8c00]/[0.19]">
                   0{index + 1}
