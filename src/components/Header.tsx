@@ -23,18 +23,18 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
   return <header className="fixed top-0 left-0 right-0 z-50 bg-accent backdrop-blur-md border-b border-retro-blue/30">
       <div className="container mx-auto px-4">
-        <div className="h-20 text-[#ff8c00] py-0 pb-0 flex items-end justify-between mt-[10px] mb-[30px]">
+        <div className="h-20 text-[#ff8c00] py-0 flex items-end justify-between mt-[10px] mb-[30px] pb-0">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group mb-0">
             <div className="relative">
-              <Disc className="w-12 h-12 group-hover:animate-spin-slow transition-all text-primary-foreground" />
+              <Disc className="w-12 h-12 group-hover:animate-spin-slow transition-all text-primary-foreground pb-0" />
               <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-50 border-dashed" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold tracking-wider text-retro-blue text-5xl">
                 orangeblue
               </span>
-              <span className="text-xs tracking-widest font-semibold font-serif text-vinyl-black"> music of the 80's</span>
+              <span className="text-xs tracking-widest font-semibold font-serif text-vinyl-black text-right pt-[2px] py-0"> music of the 80's</span>
             </div>
           </Link>
 
