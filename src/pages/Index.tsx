@@ -74,9 +74,9 @@ const Index = () => {
       </section>
 
       {/* Music Styles Section */}
-      <section className="py-20 bg-secondary text-retro-cream">
+      <section className="py-20 text-retro-cream bg-stone-200">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 bg-retro-cream">
+          <div className="text-center mb-16 bg-stone-200">
             <span className="text-sm tracking-widest uppercase font-body text-vinyl-groove">Жанры эпохи</span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
               СТИЛИ И НАПРАВЛЕНИЯ
@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* Featured Artists Section */}
-      <section className="py-20 bg-background text-retro-cream">
+      <section className="py-20 text-retro-cream bg-orange-100">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
