@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <Disc className="opacity-80 text-vinyl-black border-double w-[25px] h-[25px]" />
+              <Disc className="opacity-80 text-vinyl-black w-[20px] h-[20px] pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid" />
               <span className="font-display font-bold tracking-wider text-retro-blue text-left text-3xl">orangeblue</span>
             </Link>
             <p className="text-sm leading-relaxed text-vinyl-black">
