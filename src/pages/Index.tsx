@@ -32,7 +32,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
-              <Radio className="w-6 h-6 text-retro-blue animate-pulse" />
+              <Radio className="animate-pulse text-[#ff8c00] w-[40px] h-[40px]" />
               <span className="font-body text-sm tracking-widest uppercase text-muted">
                 Музыкальный портал
               </span>
