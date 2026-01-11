@@ -57,10 +57,7 @@ const Footer = () => {
           <p className="text-xs text-vinyl-black">
             © 2024 orangeblue. Все права защищены.
           </p>
-          <p className="text-xs flex items-center gap-2 text-vinyl-black"> Создано с ♥ к музыке
-♥
-
-          <span className="text-orange-800">♥</span> для любителей музыки 80-х
+          <p className="text-xs flex items-center gap-2 text-vinyl-black"> Создано с ♥ к музыке 80-х<span className="text-orange-800">♥</span> для любителей музыки 80-х
           </p>
         </div>
       </div>
