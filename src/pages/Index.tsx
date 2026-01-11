@@ -77,7 +77,7 @@ const Index = () => {
       <section className="py-20 bg-secondary text-retro-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 bg-retro-cream">
-            <span className="text-sm tracking-widest uppercase font-body text-vinyl-black">Жанры эпохи</span>
+            <span className="text-sm tracking-widest uppercase font-body text-vinyl-groove">Жанры эпохи</span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-2">
               СТИЛИ И НАПРАВЛЕНИЯ
             </h2>
@@ -122,7 +122,7 @@ const Index = () => {
               </h2>
             </div>
             <Link to="/artists" className="text-accent hover:text-accent/80 transition-colors flex items-center gap-2 mt-4 md:mt-0">
-              <span className="font-body text-sm">Смотреть всех</span>
+              <span className="font-body text-sm text-vinyl-black">Смотреть всех</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
