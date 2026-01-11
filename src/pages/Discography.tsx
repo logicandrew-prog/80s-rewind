@@ -20,7 +20,7 @@ const Discography = () => {
           <h1 className="font-display text-5xl md:text-7xl text-primary-foreground">
             ДИСКОГРАФИЯ
           </h1>
-          <p className="text-muted-foreground mt-4 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-muted">
             Полная коллекция альбомов легендарных исполнителей 80-х годов. 
             Нажмите на альбом, чтобы увидеть список треков.
           </p>
