@@ -74,7 +74,7 @@ const Contact = () => {
           <h1 className="font-display text-5xl md:text-7xl text-primary-foreground">
             ОБРАТНАЯ СВЯЗЬ
           </h1>
-          <p className="text-muted-foreground mt-4 max-w-2xl">
+          <p className="mt-4 max-w-2xl text-muted">
             Есть вопросы, предложения или хотите поделиться воспоминаниями о 80-х? 
             Мы всегда рады услышать от вас!
           </p>
@@ -142,7 +142,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Email</h4>
-                      <a href="mailto:info@orangeblue.music" className="text-accent hover:underline">
+                      <a href="mailto:info@orangeblue.music" className="hover:underline text-vinyl-black">
                         info@orangeblue.music
                       </a>
                     </div>
