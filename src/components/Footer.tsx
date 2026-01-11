@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <Disc className="w-10 h-10 opacity-80 text-vinyl-black border-double" />
+              <Disc className="opacity-80 text-vinyl-black border-double mt-[7px] w-0 h-0" />
               <span className="font-display font-bold tracking-wider text-retro-blue text-4xl">
                 orangeblue
               </span>
@@ -59,9 +59,10 @@ const Footer = () => {
           <p className="text-xs text-vinyl-black">
             © 2024 orangeblue. Все права защищены.
           </p>
-          <p className="text-xs flex items-center gap-2 text-vinyl-black">Создано с
+          <p className="text-xs flex items-center gap-2 text-vinyl-groove">Создано с ♥ для любителей музыки 80-х
 ♥
-для любителей музыки 80-х<span className="text-orange-800">♥</span> для любителей музыки 80-х
+
+          <span className="text-orange-800">♥</span> для любителей музыки 80-х
           </p>
         </div>
       </div>
