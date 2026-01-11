@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <Disc className="w-10 h-10 text-destructive" />
+              <Disc className="w-10 h-10 text-vinyl-groove" />
               <span className="font-display font-bold tracking-wider text-retro-blue text-4xl">
                 orangeblue
               </span>
