@@ -6,29 +6,21 @@ import { Button } from "@/components/ui/button";
 import { artists, genres } from "@/data/artists";
 import heroImage from "@/assets/hero-vinyl.jpg";
 import vinylRecord from "@/assets/vinyl-record.jpg";
-
 const Index = () => {
   const featuredArtists = artists.slice(0, 4);
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroImage})`
+      }} />
         <div className="absolute inset-0 bg-gradient-to-b from-retro-blue/90 via-vinyl-black/70 to-vinyl-black" />
         
         {/* Floating Vinyl */}
         <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block">
           <div className="relative w-64 h-64 animate-spin-slow">
-            <img 
-              src={vinylRecord} 
-              alt="Vinyl"
-              className="w-full h-full rounded-full object-cover border-4 border-retro-blue/30"
-            />
+            <img src={vinylRecord} alt="Vinyl" className="w-full h-full rounded-full object-cover border-4 border-retro-blue/30" />
             <div className="absolute inset-0 rounded-full vinyl-grooves" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-retro-blue flex items-center justify-center">
               <Disc className="w-8 h-8 text-primary-foreground" />
@@ -82,7 +74,7 @@ const Index = () => {
       </section>
 
       {/* Music Styles Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-secondary text-retro-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-accent text-sm tracking-widest uppercase font-body">Жанры эпохи</span>
@@ -92,11 +84,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {genres.map((genre, index) => (
-              <div 
-                key={genre.name}
-                className="bg-card border border-border rounded-lg p-8 card-hover relative overflow-hidden group"
-              >
+            {genres.map((genre, index) => <div key={genre.name} className="bg-card border border-border rounded-lg p-8 card-hover relative overflow-hidden group">
                 {/* Index Number */}
                 <span className="absolute top-4 right-4 font-display text-6xl text-accent/10 group-hover:text-accent/20 transition-colors">
                   0{index + 1}
@@ -112,25 +100,19 @@ const Index = () => {
                       {genre.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {genre.artists.map((artist) => (
-                        <span 
-                          key={artist}
-                          className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/20"
-                        >
+                      {genre.artists.map(artist => <span key={artist} className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/20">
                           {artist}
-                        </span>
-                      ))}
+                        </span>)}
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       {/* Featured Artists Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background text-retro-cream">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
@@ -139,48 +121,37 @@ const Index = () => {
                 ИСПОЛНИТЕЛИ
               </h2>
             </div>
-            <Link 
-              to="/artists" 
-              className="text-accent hover:text-accent/80 transition-colors flex items-center gap-2 mt-4 md:mt-0"
-            >
+            <Link to="/artists" className="text-accent hover:text-accent/80 transition-colors flex items-center gap-2 mt-4 md:mt-0">
               <span className="font-body text-sm">Смотреть всех</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredArtists.map((artist) => (
-              <ArtistCard
-                key={artist.id}
-                id={artist.id}
-                name={artist.name}
-                genre={artist.genre.split(" / ")[0]}
-                imageUrl={artist.photos[0].url}
-              />
-            ))}
+            {featuredArtists.map(artist => <ArtistCard key={artist.id} id={artist.id} name={artist.name} genre={artist.genre.split(" / ")[0]} imageUrl={artist.photos[0].url} />)}
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-vinyl-black">
+      <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <span className="font-display text-5xl text-accent">10+</span>
-              <p className="text-muted-foreground text-sm mt-2">Исполнителей</p>
+              <p className="text-sm mt-2 text-retro-cream">Исполнителей</p>
             </div>
             <div>
               <span className="font-display text-5xl text-accent">50+</span>
-              <p className="text-muted-foreground text-sm mt-2">Альбомов</p>
+              <p className="text-sm mt-2 text-retro-cream">Альбомов</p>
             </div>
             <div>
               <span className="font-display text-5xl text-accent">200+</span>
-              <p className="text-muted-foreground text-sm mt-2">Треков</p>
+              <p className="text-sm mt-2 text-retro-cream">Треков</p>
             </div>
             <div>
               <span className="font-display text-5xl text-accent">80-е</span>
-              <p className="text-muted-foreground text-sm mt-2">Золотая эра</p>
+              <p className="text-sm mt-2 text-retro-cream">Золотая эра</p>
             </div>
           </div>
         </div>
@@ -209,8 +180,6 @@ const Index = () => {
           </Link>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
