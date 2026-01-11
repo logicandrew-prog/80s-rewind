@@ -27,7 +27,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group mb-0">
             <div className="relative">
-              <Disc className="w-12 h-12 group-hover:animate-spin-slow transition-all text-primary-foreground pb-0" />
+              <Disc className="w-12 h-12 group-hover:animate-spin-slow transition-all text-primary-foreground pb-0 rounded-3xl border-8 border-vinyl-black" />
               <div className="absolute inset-0 bg-retro-blue rounded-full scale-50 opacity-50 border-dashed" />
             </div>
             <div className="flex flex-col">
