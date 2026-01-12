@@ -20,64 +20,100 @@ export interface Artist {
   mainPhoto: string;
 }
 
-// Using reliable image sources from Unsplash for artist photos
+// Artist photos - using actual band photos from Wikimedia Commons
 const artistPhotos = {
   depeche: [
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "Концертное выступление" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Студийная сессия" },
-    { url: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600", caption: "За кулисами" },
-    { url: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600", caption: "Фотосессия 80-х" },
-    { url: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600", caption: "Мировой тур" },
-    { url: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600", caption: "На сцене" }
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg/640px-Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg", caption: "Концертное выступление" },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Depeche_Mode_-_The_O2_-_Thursday_22nd_November_2017_DepecheModeO2221117-19_%2838570900451%29.jpg/640px-Depeche_Mode_-_The_O2_-_Thursday_22nd_November_2017_DepecheModeO2221117-19_%2838570900451%29.jpg", caption: "Студийная сессия" }
   ],
   duran: [
-    { url: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600", caption: "На съёмках клипа Rio" },
-    { url: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600", caption: "Концерт в Лондоне" },
-    { url: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600", caption: "Студийная работа" },
-    { url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600", caption: "Мировое турне" },
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "Церемония награждения" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Промо-фото" }
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Duran_Duran_%282011%29.jpg/640px-Duran_Duran_%282011%29.jpg", caption: "На сцене" },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Simon_Le_Bon_and_John_Taylor.jpg/480px-Simon_Le_Bon_and_John_Taylor.jpg", caption: "Концерт" }
   ],
   aha: [
-    { url: "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=600", caption: "Съёмки клипа Take On Me" },
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "Концерт в Осло" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Промо-фото" },
-    { url: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600", caption: "Мировой тур" },
-    { url: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600", caption: "За кулисами" },
-    { url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600", caption: "Студийная запись" }
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A-ha_in_Bergen_%282010%29.jpg/640px-A-ha_in_Bergen_%282010%29.jpg", caption: "Концерт в Бергене" },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Morten_Harket_live_2016.jpg/480px-Morten_Harket_live_2016.jpg", caption: "Morten Harket" }
   ],
   inxs: [
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "Майкл Хатченс на сцене" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Концерт в Сиднее" },
-    { url: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600", caption: "Фотосессия для Kick" },
-    { url: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600", caption: "Мировой тур" },
-    { url: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600", caption: "За кулисами" },
-    { url: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600", caption: "Промо-фото" }
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Inxs_brisbane_jan_17_2007.jpg/640px-Inxs_brisbane_jan_17_2007.jpg", caption: "На сцене" },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/INXS_-_Perth_2011.jpg/640px-INXS_-_Perth_2011.jpg", caption: "Концерт" }
   ],
   modern: [
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "Выступление на ТВ" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Концерт в Берлине" },
-    { url: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600", caption: "Промо-фото 1985" },
-    { url: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600", caption: "Студийная запись" },
-    { url: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600", caption: "Мировой тур" },
-    { url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600", caption: "Фотосессия" }
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thomas_Anders_2011.jpg/480px-Thomas_Anders_2011.jpg", caption: "Thomas Anders" },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Dieter_Bohlen_2006.jpg/480px-Dieter_Bohlen_2006.jpg", caption: "Dieter Bohlen" }
   ],
   generic: [
     { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "На сцене" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Промо-фото" },
-    { url: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600", caption: "Концертное турне" },
-    { url: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=600", caption: "В студии" },
-    { url: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600", caption: "Фотосессия" },
-    { url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600", caption: "Выступление" }
+    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Промо-фото" }
   ]
 };
 
-// Album covers using reliable placeholder images
-const albumCover = "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400";
-const albumCover2 = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400";
-const albumCover3 = "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400";
-const albumCover4 = "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400";
-const albumCover5 = "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400";
+// Album covers - using actual album artwork from Wikimedia Commons
+const albumCovers = {
+  // Depeche Mode
+  speakAndSpell: "https://upload.wikimedia.org/wikipedia/en/8/82/DepecheMode_SpeakAndSpell.png",
+  brokenFrame: "https://upload.wikimedia.org/wikipedia/en/6/6e/Depeche_Mode_-_A_Broken_Frame.png",
+  constructionTime: "https://upload.wikimedia.org/wikipedia/en/8/8e/Depeche_Mode_-_Construction_Time_Again.png",
+  someGreatReward: "https://upload.wikimedia.org/wikipedia/en/e/e1/Depeche_Mode_-_Some_Great_Reward.png",
+  blackCelebration: "https://upload.wikimedia.org/wikipedia/en/d/d7/Depeche_Mode_-_Black_Celebration.png",
+  musicMasses: "https://upload.wikimedia.org/wikipedia/en/e/ed/Depeche_Mode_-_Music_for_the_Masses.png",
+  violator: "https://upload.wikimedia.org/wikipedia/en/9/92/Depeche_Mode_-_Violator.png",
+  songsFaith: "https://upload.wikimedia.org/wikipedia/en/0/0b/Depeche_Mode_-_Songs_of_Faith_and_Devotion.png",
+  ultra: "https://upload.wikimedia.org/wikipedia/en/3/31/Depeche_Mode_-_Ultra.png",
+  exciter: "https://upload.wikimedia.org/wikipedia/en/2/27/Depeche_Mode_-_Exciter.png",
+  playingAngel: "https://upload.wikimedia.org/wikipedia/en/d/dc/Depeche_Mode_-_Playing_the_Angel.png",
+  soundsUniverse: "https://upload.wikimedia.org/wikipedia/en/2/2d/Depeche_Mode_-_Sounds_of_the_Universe.png",
+  deltaMachine: "https://upload.wikimedia.org/wikipedia/en/0/04/Depeche_Mode_-_Delta_Machine.png",
+  spirit: "https://upload.wikimedia.org/wikipedia/en/3/3e/Depeche_Mode_-_Spirit.png",
+  mementoMori: "https://upload.wikimedia.org/wikipedia/en/5/54/Depeche_Mode_-_Memento_Mori.png",
+  
+  // Duran Duran
+  duranDuran: "https://upload.wikimedia.org/wikipedia/en/f/fd/Duran_Duran_%28album%29_cover.jpg",
+  rio: "https://upload.wikimedia.org/wikipedia/en/2/26/Duran_Duran_-_Rio.png",
+  sevenRagged: "https://upload.wikimedia.org/wikipedia/en/c/c9/Duran_Duran_-_Seven_and_the_Ragged_Tiger.png",
+  notorious: "https://upload.wikimedia.org/wikipedia/en/2/26/Duran_duran_-_notorious.jpg",
+  bigThing: "https://upload.wikimedia.org/wikipedia/en/0/0e/Duran_Duran_-_Big_Thing.jpg",
+  liberty: "https://upload.wikimedia.org/wikipedia/en/6/6e/Duran_Duran_Liberty.jpg",
+  weddingAlbum: "https://upload.wikimedia.org/wikipedia/en/c/cc/Duran_Duran_-_Duran_Duran_%28The_Wedding_Album%29.png",
+  
+  // a-ha
+  huntingHighLow: "https://upload.wikimedia.org/wikipedia/en/8/86/A-ha_Hunting_High_and_Low.jpg",
+  scoundrelDays: "https://upload.wikimedia.org/wikipedia/en/7/79/A-ha_Scoundrel_Days.jpg",
+  stayRoads: "https://upload.wikimedia.org/wikipedia/en/6/6f/A-ha_Stay_on_These_Roads.jpg",
+  eastSun: "https://upload.wikimedia.org/wikipedia/en/d/df/A-ha_East_of_the_Sun%2C_West_of_the_Moon.jpg",
+  memorialBeach: "https://upload.wikimedia.org/wikipedia/en/6/6c/A-ha_Memorial_Beach.jpg",
+  
+  // INXS
+  inxsDebut: "https://upload.wikimedia.org/wikipedia/en/2/2f/INXS_-_INXS.jpg",
+  shabooh: "https://upload.wikimedia.org/wikipedia/en/6/63/INXS_-_Shabooh_Shoobah.jpg",
+  theSwing: "https://upload.wikimedia.org/wikipedia/en/a/a8/INXS-TheSwing.jpg",
+  listenThieves: "https://upload.wikimedia.org/wikipedia/en/4/42/INXS_-_Listen_Like_Thieves.jpg",
+  kick: "https://upload.wikimedia.org/wikipedia/en/1/16/INXS_-_Kick.png",
+  x: "https://upload.wikimedia.org/wikipedia/en/8/8c/INXS_-_X.png",
+  
+  // Modern Talking
+  firstAlbum: "https://upload.wikimedia.org/wikipedia/en/f/f7/Modern_Talking_-_The_1st_Album.jpg",
+  letsTalkLove: "https://upload.wikimedia.org/wikipedia/en/d/df/Modern_Talking_-_Let%27s_Talk_About_Love.jpg",
+  readyRomance: "https://upload.wikimedia.org/wikipedia/en/d/d9/Modern_Talking_-_Ready_for_Romance.jpg",
+  middleNowhere: "https://upload.wikimedia.org/wikipedia/en/7/77/Modern_Talking_-_In_the_Middle_of_Nowhere.jpg",
+  romanticWarriors: "https://upload.wikimedia.org/wikipedia/en/e/e9/Modern_Talking_-_Romantic_Warriors.jpg",
+  gardenVenus: "https://upload.wikimedia.org/wikipedia/en/6/62/Modern_Talking_-_In_the_Garden_of_Venus.jpg",
+  backForGood: "https://upload.wikimedia.org/wikipedia/en/5/5f/Modern_Talking_-_Back_for_Good.jpg",
+  
+  // Generic placeholder for others
+  generic1: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  generic2: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
+  generic3: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
+  generic4: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  generic5: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400"
+};
+
+// Aliases for backwards compatibility
+const albumCover = albumCovers.generic1;
+const albumCover2 = albumCovers.generic2;
+const albumCover3 = albumCovers.generic3;
+const albumCover4 = albumCovers.generic4;
+const albumCover5 = albumCovers.generic5;
 
 export const artists: Artist[] = [
   {
@@ -95,110 +131,110 @@ export const artists: Artist[] = [
       "Были включены в Зал славы рок-н-ролла в 2020 году"
     ],
     members: ["Dave Gahan", "Martin Gore", "Andy Fletcher†", "Vince Clarke (ранее)", "Alan Wilder (ранее)"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg/640px-Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg",
     albums: [
       { 
         title: "Speak & Spell", 
         year: 1981, 
-        cover: albumCover,
+        cover: albumCovers.speakAndSpell,
         type: "album",
         tracks: ["New Life", "I Sometimes Wish I Was Dead", "Puppets", "Boys Say Go!", "Nodisco", "What's Your Name?", "Photographic", "Tora! Tora! Tora!", "Big Muff", "Any Second Now (Voices)", "Just Can't Get Enough"] 
       },
       { 
         title: "A Broken Frame", 
         year: 1982, 
-        cover: albumCover2,
+        cover: albumCovers.brokenFrame,
         type: "album",
         tracks: ["Leave in Silence", "My Secret Garden", "Monument", "Nothing to Fear", "See You", "Satellite", "The Meaning of Love", "A Photograph of You", "Shouldn't Have Done That", "The Sun & the Rainfall"] 
       },
       { 
         title: "Construction Time Again", 
         year: 1983, 
-        cover: albumCover3,
+        cover: albumCovers.constructionTime,
         type: "album",
         tracks: ["Love, in Itself", "More Than a Party", "Pipeline", "Everything Counts", "Two Minute Warning", "Shame", "The Landscape Is Changing", "Told You So", "And Then..."] 
       },
       { 
         title: "Some Great Reward", 
         year: 1984, 
-        cover: albumCover4,
+        cover: albumCovers.someGreatReward,
         type: "album",
         tracks: ["Something to Do", "Lie to Me", "People Are People", "It Doesn't Matter", "Stories of Old", "Somebody", "Master and Servant", "If You Want", "Blasphemous Rumours"] 
       },
       { 
         title: "Black Celebration", 
         year: 1986, 
-        cover: albumCover5,
+        cover: albumCovers.blackCelebration,
         type: "album",
         tracks: ["Black Celebration", "Fly on the Windscreen – Final", "A Question of Lust", "Sometimes", "It Doesn't Matter Two", "A Question of Time", "Stripped", "Here Is the House", "World Full of Nothing", "Dressed in Black", "New Dress"] 
       },
       { 
         title: "Music for the Masses", 
         year: 1987, 
-        cover: albumCover,
+        cover: albumCovers.musicMasses,
         type: "album",
         tracks: ["Never Let Me Down Again", "The Things You Said", "Strangelove", "Sacred", "Little 15", "Behind the Wheel", "I Want You Now", "To Have and to Hold", "Nothing", "Pimpf"] 
       },
       { 
         title: "Violator", 
         year: 1990, 
-        cover: albumCover2,
+        cover: albumCovers.violator,
         type: "album",
         tracks: ["World in My Eyes", "Sweetest Perfection", "Personal Jesus", "Halo", "Waiting for the Night", "Enjoy the Silence", "Policy of Truth", "Blue Dress", "Clean"] 
       },
       { 
         title: "Songs of Faith and Devotion", 
         year: 1993, 
-        cover: albumCover3,
+        cover: albumCovers.songsFaith,
         type: "album",
         tracks: ["I Feel You", "Walking in My Shoes", "Condemnation", "Mercy in You", "Judas", "In Your Room", "Get Right with Me", "Rush", "One Caress", "Higher Love"] 
       },
       { 
         title: "Ultra", 
         year: 1997, 
-        cover: albumCover4,
+        cover: albumCovers.ultra,
         type: "album",
         tracks: ["Barrel of a Gun", "The Love Thieves", "Home", "It's No Good", "Uselink", "Useless", "Sister of Night", "Jazz Thieves", "Freestate", "The Bottom Line", "Insight"] 
       },
       { 
         title: "Exciter", 
         year: 2001, 
-        cover: albumCover5,
+        cover: albumCovers.exciter,
         type: "album",
         tracks: ["Dream On", "Shine", "The Sweetest Condition", "When the Body Speaks", "The Dead of Night", "Lovetheme", "Freelove", "Comatose", "I Feel Loved", "Breathe", "Easy Tiger", "I Am You", "Goodnight Lovers"] 
       },
       { 
         title: "Playing the Angel", 
         year: 2005, 
-        cover: albumCover,
+        cover: albumCovers.playingAngel,
         type: "album",
         tracks: ["A Pain That I'm Used To", "John the Revelator", "Suffer Well", "The Sinner in Me", "Precious", "Macro", "I Want It All", "Nothing's Impossible", "Introspectre", "Damaged People", "Lilian", "The Darkest Star"] 
       },
       { 
         title: "Sounds of the Universe", 
         year: 2009, 
-        cover: albumCover2,
+        cover: albumCovers.soundsUniverse,
         type: "album",
         tracks: ["In Chains", "Hole to Feed", "Wrong", "Fragile Tension", "Little Soul", "In Sympathy", "Peace", "Come Back", "Spacewalker", "Perfect", "Miles Away/The Truth Is", "Jezebel", "Corrupt"] 
       },
       { 
         title: "Delta Machine", 
         year: 2013, 
-        cover: albumCover3,
+        cover: albumCovers.deltaMachine,
         type: "album",
         tracks: ["Welcome to My World", "Angel", "Heaven", "Secret to the End", "My Little Universe", "Slow", "Broken", "The Child Inside", "Soft Touch/Raw Nerve", "Should Be Higher", "Alone", "Soothe My Soul", "Goodbye"] 
       },
       { 
         title: "Spirit", 
         year: 2017, 
-        cover: albumCover4,
+        cover: albumCovers.spirit,
         type: "album",
         tracks: ["Going Backwards", "Where's the Revolution", "The Worst Crime", "Scum", "You Move", "Cover Me", "Eternal", "Poison Heart", "So Much Love", "Poorman", "No More (This Is the Last Time)", "Fail"] 
       },
       { 
         title: "Memento Mori", 
         year: 2023, 
-        cover: albumCover5,
+        cover: albumCovers.mementoMori,
         type: "album",
         tracks: ["My Cosmos Is Mine", "Wagging Tongue", "Ghosts Again", "Don't Say You Love Me", "My Favourite Stranger", "Soul with Me", "Caroline's Monkey", "Before We Drown", "People Are Good", "Always You", "Never Let Me Go", "Speak to Me"] 
       },
@@ -277,15 +313,15 @@ export const artists: Artist[] = [
       "Были на обложке журнала Rolling Stone 6 раз"
     ],
     members: ["Simon Le Bon", "Nick Rhodes", "John Taylor", "Roger Taylor", "Andy Taylor (ранее)"],
-    mainPhoto: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600",
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Duran_Duran_%282011%29.jpg/640px-Duran_Duran_%282011%29.jpg",
     albums: [
-      { title: "Duran Duran", year: 1981, cover: albumCover, type: "album", tracks: ["Planet Earth", "Girls on Film", "Careless Memories", "Night Boat", "Sound of Thunder", "Friends of Mine", "Tel Aviv", "Anyone Out There", "To the Shore"] },
-      { title: "Rio", year: 1982, cover: albumCover2, type: "album", tracks: ["Rio", "Hungry Like the Wolf", "Save a Prayer", "Hold Back the Rain", "New Religion", "My Own Way", "Lonely in Your Nightmare", "The Chauffeur", "Last Chance on the Stairway"] },
-      { title: "Seven and the Ragged Tiger", year: 1983, cover: albumCover3, type: "album", tracks: ["The Reflex", "Union of the Snake", "New Moon on Monday", "I Take the Dice", "Of Crime and Passion", "Shadows on Your Side", "Tiger Tiger", "The Seventh Stranger", "Cracks in the Pavement"] },
-      { title: "Notorious", year: 1986, cover: albumCover4, type: "album", tracks: ["Notorious", "Skin Trade", "A Matter of Feeling", "Meet El Presidente", "American Science", "Winter Marches On", "Vertigo (Do the Demolition)", "So Misled", "Proposition"] },
-      { title: "Big Thing", year: 1988, cover: albumCover5, type: "album", tracks: ["Big Thing", "I Don't Want Your Love", "All She Wants Is", "Too Late Marlene", "Drug (It's Just a State of Mind)", "Do You Believe in Shame?", "Palomino", "Interlude One", "Land", "Flute Interlude", "The Edge of America", "Lake Shore Driving"] },
-      { title: "Liberty", year: 1990, cover: albumCover, type: "album", tracks: ["Violence of Summer (Love's Taking Over)", "Liberty", "Hothead", "Serious", "All Along the Water", "My Antarctica", "First Impression", "Read My Lips", "Can You Deal with It", "Venice Drowning", "Downtown"] },
-      { title: "The Wedding Album", year: 1993, cover: albumCover2, type: "album", tracks: ["Too Much Information", "Ordinary World", "Come Undone", "Drowning Man", "Love Voodoo", "Shotgun", "UMF", "Femme Fatale", "None of the Above", "Shelter", "To Whom It May Concern", "Sin of the City"] },
+      { title: "Duran Duran", year: 1981, cover: albumCovers.duranDuran, type: "album", tracks: ["Planet Earth", "Girls on Film", "Careless Memories", "Night Boat", "Sound of Thunder", "Friends of Mine", "Tel Aviv", "Anyone Out There", "To the Shore"] },
+      { title: "Rio", year: 1982, cover: albumCovers.rio, type: "album", tracks: ["Rio", "Hungry Like the Wolf", "Save a Prayer", "Hold Back the Rain", "New Religion", "My Own Way", "Lonely in Your Nightmare", "The Chauffeur", "Last Chance on the Stairway"] },
+      { title: "Seven and the Ragged Tiger", year: 1983, cover: albumCovers.sevenRagged, type: "album", tracks: ["The Reflex", "Union of the Snake", "New Moon on Monday", "I Take the Dice", "Of Crime and Passion", "Shadows on Your Side", "Tiger Tiger", "The Seventh Stranger", "Cracks in the Pavement"] },
+      { title: "Notorious", year: 1986, cover: albumCovers.notorious, type: "album", tracks: ["Notorious", "Skin Trade", "A Matter of Feeling", "Meet El Presidente", "American Science", "Winter Marches On", "Vertigo (Do the Demolition)", "So Misled", "Proposition"] },
+      { title: "Big Thing", year: 1988, cover: albumCovers.bigThing, type: "album", tracks: ["Big Thing", "I Don't Want Your Love", "All She Wants Is", "Too Late Marlene", "Drug (It's Just a State of Mind)", "Do You Believe in Shame?", "Palomino", "Interlude One", "Land", "Flute Interlude", "The Edge of America", "Lake Shore Driving"] },
+      { title: "Liberty", year: 1990, cover: albumCovers.liberty, type: "album", tracks: ["Violence of Summer (Love's Taking Over)", "Liberty", "Hothead", "Serious", "All Along the Water", "My Antarctica", "First Impression", "Read My Lips", "Can You Deal with It", "Venice Drowning", "Downtown"] },
+      { title: "The Wedding Album", year: 1993, cover: albumCovers.weddingAlbum, type: "album", tracks: ["Too Much Information", "Ordinary World", "Come Undone", "Drowning Man", "Love Voodoo", "Shotgun", "UMF", "Femme Fatale", "None of the Above", "Shelter", "To Whom It May Concern", "Sin of the City"] },
       { title: "Thank You", year: 1995, cover: albumCover3, type: "album", tracks: ["White Lines", "I Wanna Take You Higher", "Perfect Day", "Watching the Detectives", "Lay Lady Lay", "911 Is a Joke", "Success", "Crystal Ship", "Ball of Confusion", "Thank You", "Drive By", "I Wanna Take You Higher Again"] },
       { title: "Pop Trash", year: 2000, cover: albumCover4, type: "album", tracks: ["Someone Else Not Me", "Playing with Uranium", "Hallucinating Elvis", "Starting to Remember", "Pop Trash Movie", "Fragment", "Mars Meets Venus", "Lady Xanax", "The Sun Doesn't Shine Forever", "Kiss Goodbye", "Last Day on Earth"] },
       { title: "Astronaut", year: 2004, cover: albumCover5, type: "album", tracks: ["(Reach Up for The) Sunrise", "What Happens Tomorrow", "Astronaut", "Bedroom Toys", "Nice", "Taste the Summer", "Finest Hour", "Want You More!", "Chains", "One of Those Days", "Point of No Return", "Still Breathing"] },
@@ -312,13 +348,13 @@ export const artists: Artist[] = [
       "Анимированный клип 'Take On Me' стоил 100 000 долларов — огромная сумма для того времени"
     ],
     members: ["Morten Harket", "Magne Furuholmen", "Pål Waaktaar-Savoy"],
-    mainPhoto: "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=600",
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A-ha_in_Bergen_%282010%29.jpg/640px-A-ha_in_Bergen_%282010%29.jpg",
     albums: [
-      { title: "Hunting High and Low", year: 1985, cover: albumCover, type: "album", tracks: ["Take On Me", "Train of Thought", "Hunting High and Low", "The Blue Sky", "Living a Boy's Adventure Tale", "The Sun Always Shines on T.V.", "And You Tell Me", "Love Is Reason", "Dream Myself Alive", "Here I Stand and Face the Rain"] },
-      { title: "Scoundrel Days", year: 1986, cover: albumCover2, type: "album", tracks: ["Scoundrel Days", "The Swing of Things", "I've Been Losing You", "October", "Manhattan Skyline", "Cry Wolf", "We're Looking for the Whales", "The Weight of the Wind", "Maybe Maybe", "Soft Rains of April"] },
-      { title: "Stay on These Roads", year: 1988, cover: albumCover3, type: "album", tracks: ["Stay on These Roads", "The Blood That Moves the Body", "Touchy!", "This Alone Is Love", "Hurry Home", "The Living Daylights", "There's Never a Forever Thing", "Out of Blue Comes Green", "You Are the One", "You'll End Up Crying"] },
-      { title: "East of the Sun, West of the Moon", year: 1990, cover: albumCover4, type: "album", tracks: ["Crying in the Rain", "Early Morning", "I Call Your Name", "Slender Frame", "East of the Sun", "Sycamore Leaves", "Waiting for Her", "Cold River", "The Way We Talk", "Rolling Thunder", "(Seemingly) Nonstop July"] },
-      { title: "Memorial Beach", year: 1993, cover: albumCover5, type: "album", tracks: ["Dark Is the Night for All", "Move to Memphis", "Cold as Stone", "Angel in the Snow", "Locust", "Lamb to the Slaughter", "How Sweet It Was", "Lie Down in Darkness", "Memorial Beach", "Between Your Mama and Yourself", "Differences"] },
+      { title: "Hunting High and Low", year: 1985, cover: albumCovers.huntingHighLow, type: "album", tracks: ["Take On Me", "Train of Thought", "Hunting High and Low", "The Blue Sky", "Living a Boy's Adventure Tale", "The Sun Always Shines on T.V.", "And You Tell Me", "Love Is Reason", "Dream Myself Alive", "Here I Stand and Face the Rain"] },
+      { title: "Scoundrel Days", year: 1986, cover: albumCovers.scoundrelDays, type: "album", tracks: ["Scoundrel Days", "The Swing of Things", "I've Been Losing You", "October", "Manhattan Skyline", "Cry Wolf", "We're Looking for the Whales", "The Weight of the Wind", "Maybe Maybe", "Soft Rains of April"] },
+      { title: "Stay on These Roads", year: 1988, cover: albumCovers.stayRoads, type: "album", tracks: ["Stay on These Roads", "The Blood That Moves the Body", "Touchy!", "This Alone Is Love", "Hurry Home", "The Living Daylights", "There's Never a Forever Thing", "Out of Blue Comes Green", "You Are the One", "You'll End Up Crying"] },
+      { title: "East of the Sun, West of the Moon", year: 1990, cover: albumCovers.eastSun, type: "album", tracks: ["Crying in the Rain", "Early Morning", "I Call Your Name", "Slender Frame", "East of the Sun", "Sycamore Leaves", "Waiting for Her", "Cold River", "The Way We Talk", "Rolling Thunder", "(Seemingly) Nonstop July"] },
+      { title: "Memorial Beach", year: 1993, cover: albumCovers.memorialBeach, type: "album", tracks: ["Dark Is the Night for All", "Move to Memphis", "Cold as Stone", "Angel in the Snow", "Locust", "Lamb to the Slaughter", "How Sweet It Was", "Lie Down in Darkness", "Memorial Beach", "Between Your Mama and Yourself", "Differences"] },
       { title: "Minor Earth Major Sky", year: 2000, cover: albumCover, type: "album", tracks: ["Minor Earth Major Sky", "Little Black Heart", "Velvet", "Summer Moved On", "The Sun Never Shone That Day", "To Let You Win", "The Company Man", "Thought That It Was You", "I Wish I Cared", "Barely Hanging On", "You'll Never Get Over Me", "I Won't Forget Her"] },
       { title: "Lifelines", year: 2002, cover: albumCover2, type: "album", tracks: ["Lifelines", "You Wanted More", "Forever Not Yours", "Time and Again", "Did Anyone Approach You?", "Afternoon High", "A Little Bit", "Less Than Pure", "Turned Off Turn On", "Cannot Hide", "White Canvas", "Dragonfly"] },
       { title: "Analogue", year: 2005, cover: albumCover3, type: "album", tracks: ["Celice", "Cosy Prisons", "Analogue (All I Want)", "Make It Soon", "The Bandstand", "What There Is", "Birthright", "Holyground", "Over the Treetops", "A Fine Blue Line", "Halfway Through the Tour"] },
@@ -343,15 +379,15 @@ export const artists: Artist[] = [
       "Группа названа в честь словосочетания 'in excess' (чрезмерность)"
     ],
     members: ["Michael Hutchence†", "Andrew Farriss", "Tim Farriss", "Jon Farriss", "Kirk Pengilly", "Garry Gary Beers"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Inxs_brisbane_jan_17_2007.jpg/640px-Inxs_brisbane_jan_17_2007.jpg",
     albums: [
-      { title: "INXS", year: 1980, cover: albumCover, type: "album", tracks: ["On a Bus", "Doctor", "Just Keep Walking", "Learn to Smile", "Jumping", "In Vain", "Roller Skating", "Body Language", "Newsreel Babies", "Wishy Washy"] },
+      { title: "INXS", year: 1980, cover: albumCovers.inxsDebut, type: "album", tracks: ["On a Bus", "Doctor", "Just Keep Walking", "Learn to Smile", "Jumping", "In Vain", "Roller Skating", "Body Language", "Newsreel Babies", "Wishy Washy"] },
       { title: "Underneath the Colours", year: 1981, cover: albumCover2, type: "album", tracks: ["Stay Young", "Horizons", "Big Go Go", "Underneath the Colours", "Fair Weather Ahead", "Night of Rebellion", "Follow", "Barbarian", "Just to Learn Again", "What Would You Do"] },
-      { title: "Shabooh Shoobah", year: 1982, cover: albumCover3, type: "album", tracks: ["The One Thing", "To Look at You", "Spy of Love", "Soul Mistake", "Here Comes II", "Black and White", "Golden Playpen", "Jan's Song", "Old World New World", "Don't Change"] },
-      { title: "The Swing", year: 1984, cover: albumCover4, type: "album", tracks: ["Original Sin", "Melting in the Sun", "I Send a Message", "Dancing on the Jetty", "The Swing", "Johnson's Aeroplane", "Love Is (What I Say)", "Face the Change", "Burn for You", "All the Voices"] },
-      { title: "Listen Like Thieves", year: 1985, cover: albumCover5, type: "album", tracks: ["What You Need", "Listen Like Thieves", "Kiss the Dirt (Falling Down the Mountain)", "Shine Like It Does", "Good & Bad Times", "Biting Bullets", "This Time", "Three Sisters", "Same Direction", "One × One", "Red Red Sun"] },
-      { title: "Kick", year: 1987, cover: albumCover, type: "album", tracks: ["Guns in the Sky", "New Sensation", "Devil Inside", "Need You Tonight", "Mediate", "The Loved One", "Wild Life", "Never Tear Us Apart", "Mystify", "Kick", "Calling All Nations", "Tiny Daggers"] },
-      { title: "X", year: 1990, cover: albumCover2, type: "album", tracks: ["Suicide Blonde", "Disappear", "The Stairs", "Faith in Each Other", "By My Side", "Lately", "Who Pays the Price", "Know the Difference", "Bitter Tears", "On My Way", "Hear That Sound"] },
+      { title: "Shabooh Shoobah", year: 1982, cover: albumCovers.shabooh, type: "album", tracks: ["The One Thing", "To Look at You", "Spy of Love", "Soul Mistake", "Here Comes II", "Black and White", "Golden Playpen", "Jan's Song", "Old World New World", "Don't Change"] },
+      { title: "The Swing", year: 1984, cover: albumCovers.theSwing, type: "album", tracks: ["Original Sin", "Melting in the Sun", "I Send a Message", "Dancing on the Jetty", "The Swing", "Johnson's Aeroplane", "Love Is (What I Say)", "Face the Change", "Burn for You", "All the Voices"] },
+      { title: "Listen Like Thieves", year: 1985, cover: albumCovers.listenThieves, type: "album", tracks: ["What You Need", "Listen Like Thieves", "Kiss the Dirt (Falling Down the Mountain)", "Shine Like It Does", "Good & Bad Times", "Biting Bullets", "This Time", "Three Sisters", "Same Direction", "One × One", "Red Red Sun"] },
+      { title: "Kick", year: 1987, cover: albumCovers.kick, type: "album", tracks: ["Guns in the Sky", "New Sensation", "Devil Inside", "Need You Tonight", "Mediate", "The Loved One", "Wild Life", "Never Tear Us Apart", "Mystify", "Kick", "Calling All Nations", "Tiny Daggers"] },
+      { title: "X", year: 1990, cover: albumCovers.x, type: "album", tracks: ["Suicide Blonde", "Disappear", "The Stairs", "Faith in Each Other", "By My Side", "Lately", "Who Pays the Price", "Know the Difference", "Bitter Tears", "On My Way", "Hear That Sound"] },
       { title: "Welcome to Wherever You Are", year: 1992, cover: albumCover3, type: "album", tracks: ["Questions", "Heaven Sent", "Communication", "Taste It", "Not Enough Time", "All Around", "Baby Don't Cry", "Beautiful Girl", "Wishing Well", "Back on Line", "Strange Desire", "Men and Women"] },
       { title: "Full Moon, Dirty Hearts", year: 1993, cover: albumCover4, type: "album", tracks: ["Days of Rust", "The Gift", "Make Your Peace", "Time", "I'm Only Looking", "Please (You Got That...)", "Full Moon, Dirty Hearts", "Freedom Deep", "Kill the Pain", "Cut Your Roses Down", "The Messenger", "Viking Juice"] },
       { title: "Elegantly Wasted", year: 1997, cover: albumCover5, type: "album", tracks: ["Elegantly Wasted", "Everything", "Don't Lose Your Head", "Searching", "Show Me (Cherry Baby)", "Let It Ride", "She Is Rising", "Building Bridges", "I'm Just a Man", "Girl on Fire", "We Are Thrown Together"] }
@@ -373,15 +409,15 @@ export const artists: Artist[] = [
       "Их песни до сих пор являются хитами на дискотеках"
     ],
     members: ["Thomas Anders", "Dieter Bohlen"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thomas_Anders_2011.jpg/480px-Thomas_Anders_2011.jpg",
     albums: [
-      { title: "The 1st Album", year: 1985, cover: albumCover, type: "album", tracks: ["You're My Heart, You're My Soul", "You Can Win If You Want", "There's Too Much Blue in Missing You", "Lucky Guy", "Do You Wanna", "One in a Million", "Heaven Will Know", "With a Little Love", "The Night Is Yours – The Night Is Mine", "Keep Love Alive"] },
-      { title: "Let's Talk About Love", year: 1985, cover: albumCover2, type: "album", tracks: ["Cheri, Cheri Lady", "Atlantis Is Calling (S.O.S. for Love)", "Lonely Tears in Chinatown", "Just Like an Angel", "Let's Talk About Love", "With a Little Love", "Love Don't Live Here Anymore", "You're the Lady of My Heart", "Diamonds Never Made a Lady", "It's Christmas"] },
-      { title: "Ready for Romance", year: 1986, cover: albumCover3, type: "album", tracks: ["Brother Louie", "Jet Airliner", "Love in Your Eyes", "Ready for Romance", "You're the Lady of My Heart", "One in a Million", "Save Me – Don't Break Me", "Angie's Heart", "Blinded by Your Love", "Lady Lai"] },
-      { title: "In the Middle of Nowhere", year: 1986, cover: albumCover4, type: "album", tracks: ["Geronimo's Cadillac", "Give Me Peace on Earth", "Princess of the Night", "Stranded in the Middle of Nowhere", "Sweet Little Sheila", "Maria", "Ten Thousand Lonely Drums", "Don't Give Up", "Bells of Paris", "The Angels Sing in New York City"] },
-      { title: "Romantic Warriors", year: 1987, cover: albumCover5, type: "album", tracks: ["We Take the Chance", "Don't Let It Get You Down", "Romantic Warriors", "Charlene", "Lonely Tears in Chinatown", "Just Close Your Eyes", "Rouge et Noir", "Goodbye Baby", "Follow the Rainbow", "Midnight Lady", "Walking in the Rain"] },
-      { title: "In the Garden of Venus", year: 1987, cover: albumCover, type: "album", tracks: ["In 100 Years", "In Shaire", "Locomotion Tango", "In the Garden of Venus", "When the Sky Rained Fire", "Riding on a White Swan", "Slow Motion", "Doctor for My Heart", "Ave Maria", "Nostalgia"] },
-      { title: "Back for Good", year: 1998, cover: albumCover2, type: "album", tracks: ["You're My Heart, You're My Soul '98", "Brother Louie '98", "China in Her Eyes", "Juliet", "You Are Not Alone", "Anything Is Possible", "No Face, No Name, No Number", "Space Mix '98", "Good Girls Go to Heaven – Bad Girls Go to Everywhere", "I'll Never Give You Up"] },
+      { title: "The 1st Album", year: 1985, cover: albumCovers.firstAlbum, type: "album", tracks: ["You're My Heart, You're My Soul", "You Can Win If You Want", "There's Too Much Blue in Missing You", "Lucky Guy", "Do You Wanna", "One in a Million", "Heaven Will Know", "With a Little Love", "The Night Is Yours – The Night Is Mine", "Keep Love Alive"] },
+      { title: "Let's Talk About Love", year: 1985, cover: albumCovers.letsTalkLove, type: "album", tracks: ["Cheri, Cheri Lady", "Atlantis Is Calling (S.O.S. for Love)", "Lonely Tears in Chinatown", "Just Like an Angel", "Let's Talk About Love", "With a Little Love", "Love Don't Live Here Anymore", "You're the Lady of My Heart", "Diamonds Never Made a Lady", "It's Christmas"] },
+      { title: "Ready for Romance", year: 1986, cover: albumCovers.readyRomance, type: "album", tracks: ["Brother Louie", "Jet Airliner", "Love in Your Eyes", "Ready for Romance", "You're the Lady of My Heart", "One in a Million", "Save Me – Don't Break Me", "Angie's Heart", "Blinded by Your Love", "Lady Lai"] },
+      { title: "In the Middle of Nowhere", year: 1986, cover: albumCovers.middleNowhere, type: "album", tracks: ["Geronimo's Cadillac", "Give Me Peace on Earth", "Princess of the Night", "Stranded in the Middle of Nowhere", "Sweet Little Sheila", "Maria", "Ten Thousand Lonely Drums", "Don't Give Up", "Bells of Paris", "The Angels Sing in New York City"] },
+      { title: "Romantic Warriors", year: 1987, cover: albumCovers.romanticWarriors, type: "album", tracks: ["We Take the Chance", "Don't Let It Get You Down", "Romantic Warriors", "Charlene", "Lonely Tears in Chinatown", "Just Close Your Eyes", "Rouge et Noir", "Goodbye Baby", "Follow the Rainbow", "Midnight Lady", "Walking in the Rain"] },
+      { title: "In the Garden of Venus", year: 1987, cover: albumCovers.gardenVenus, type: "album", tracks: ["In 100 Years", "In Shaire", "Locomotion Tango", "In the Garden of Venus", "When the Sky Rained Fire", "Riding on a White Swan", "Slow Motion", "Doctor for My Heart", "Ave Maria", "Nostalgia"] },
+      { title: "Back for Good", year: 1998, cover: albumCovers.backForGood, type: "album", tracks: ["You're My Heart, You're My Soul '98", "Brother Louie '98", "China in Her Eyes", "Juliet", "You Are Not Alone", "Anything Is Possible", "No Face, No Name, No Number", "Space Mix '98", "Good Girls Go to Heaven – Bad Girls Go to Everywhere", "I'll Never Give You Up"] },
       { title: "Alone", year: 1999, cover: albumCover3, type: "album", tracks: ["Sexy Sexy Lover", "You're a Woman", "No.1 Hit Medley", "Hey You", "Last Exit to Brooklyn", "Alone", "It's Your Smile", "Love Is Forever", "We Still Have Dreams", "In a Hundred Years", "Cheri, Cheri Lady '99"] },
       { title: "Year of the Dragon", year: 2000, cover: albumCover4, type: "album", tracks: ["Win the Race", "Don't Make Me Blue", "China in Her Eyes 2000", "Don't Take Away My Heart", "Words Don't Come Easy", "I Need You Now", "I Will Follow You", "Year of the Dragon", "Part Time Lover", "Superstar", "Fly to the Moon", "With a Little Love '99", "Are You Ready for Love", "Cheri, Cheri Lady 2000"] },
       { title: "America", year: 2001, cover: albumCover5, type: "album", tracks: ["SMS to My Heart", "Ready for the Victory", "I Can't Give You More", "Live Your Dream", "Can't Let You Go", "Don't Worry", "America", "The Night Is Yours", "Just Say You'll Be Mine", "I Need You", "Love Is Like a Rainbow", "Do You Know", "Another Night in Paradise", "Blue System Megamix"] },
