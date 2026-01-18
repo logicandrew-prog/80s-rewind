@@ -20,27 +20,27 @@ export interface Artist {
   mainPhoto: string;
 }
 
-// Artist photos - using actual band photos from Wikimedia Commons
+// Artist photos - using actual band photos from Last.fm CDN
 const artistPhotos = {
   depeche: [
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg/640px-Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg", caption: "Концертное выступление" },
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Depeche_Mode_-_The_O2_-_Thursday_22nd_November_2017_DepecheModeO2221117-19_%2838570900451%29.jpg/640px-Depeche_Mode_-_The_O2_-_Thursday_22nd_November_2017_DepecheModeO2221117-19_%2838570900451%29.jpg", caption: "Студийная сессия" }
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg", caption: "Концертное выступление" },
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg", caption: "Студийная сессия" }
   ],
   duran: [
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Duran_Duran_%282011%29.jpg/640px-Duran_Duran_%282011%29.jpg", caption: "На сцене" },
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Simon_Le_Bon_and_John_Taylor.jpg/480px-Simon_Le_Bon_and_John_Taylor.jpg", caption: "Концерт" }
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg", caption: "На сцене" },
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg", caption: "Концерт" }
   ],
   aha: [
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A-ha_in_Bergen_%282010%29.jpg/640px-A-ha_in_Bergen_%282010%29.jpg", caption: "Концерт в Бергене" },
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Morten_Harket_live_2016.jpg/480px-Morten_Harket_live_2016.jpg", caption: "Morten Harket" }
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg", caption: "Концерт в Бергене" },
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg", caption: "Morten Harket" }
   ],
   inxs: [
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Inxs_brisbane_jan_17_2007.jpg/640px-Inxs_brisbane_jan_17_2007.jpg", caption: "На сцене" },
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/INXS_-_Perth_2011.jpg/640px-INXS_-_Perth_2011.jpg", caption: "Концерт" }
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg", caption: "На сцене" },
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg", caption: "Концерт" }
   ],
   modern: [
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thomas_Anders_2011.jpg/480px-Thomas_Anders_2011.jpg", caption: "Thomas Anders" },
-    { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Dieter_Bohlen_2006.jpg/480px-Dieter_Bohlen_2006.jpg", caption: "Dieter Bohlen" }
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg", caption: "Thomas Anders" },
+    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg", caption: "Dieter Bohlen" }
   ],
   generic: [
     { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "На сцене" },
@@ -48,57 +48,69 @@ const artistPhotos = {
   ]
 };
 
-// Album covers - using actual album artwork from Wikimedia Commons
+// Album covers - using local files for DM, placeholders for others
 const albumCovers = {
-  // Depeche Mode
-  speakAndSpell: "https://upload.wikimedia.org/wikipedia/en/8/82/DepecheMode_SpeakAndSpell.png",
-  brokenFrame: "https://upload.wikimedia.org/wikipedia/en/6/6e/Depeche_Mode_-_A_Broken_Frame.png",
-  constructionTime: "https://upload.wikimedia.org/wikipedia/en/8/8e/Depeche_Mode_-_Construction_Time_Again.png",
-  someGreatReward: "https://upload.wikimedia.org/wikipedia/en/e/e1/Depeche_Mode_-_Some_Great_Reward.png",
-  blackCelebration: "https://upload.wikimedia.org/wikipedia/en/d/d7/Depeche_Mode_-_Black_Celebration.png",
-  musicMasses: "https://upload.wikimedia.org/wikipedia/en/e/ed/Depeche_Mode_-_Music_for_the_Masses.png",
-  violator: "https://upload.wikimedia.org/wikipedia/en/9/92/Depeche_Mode_-_Violator.png",
-  songsFaith: "https://upload.wikimedia.org/wikipedia/en/0/0b/Depeche_Mode_-_Songs_of_Faith_and_Devotion.png",
-  ultra: "https://upload.wikimedia.org/wikipedia/en/3/31/Depeche_Mode_-_Ultra.png",
-  exciter: "https://upload.wikimedia.org/wikipedia/en/2/27/Depeche_Mode_-_Exciter.png",
-  playingAngel: "https://upload.wikimedia.org/wikipedia/en/d/dc/Depeche_Mode_-_Playing_the_Angel.png",
-  soundsUniverse: "https://upload.wikimedia.org/wikipedia/en/2/2d/Depeche_Mode_-_Sounds_of_the_Universe.png",
-  deltaMachine: "https://upload.wikimedia.org/wikipedia/en/0/04/Depeche_Mode_-_Delta_Machine.png",
-  spirit: "https://upload.wikimedia.org/wikipedia/en/3/3e/Depeche_Mode_-_Spirit.png",
-  mementoMori: "https://upload.wikimedia.org/wikipedia/en/5/54/Depeche_Mode_-_Memento_Mori.png",
+  // Depeche Mode - local files from public/DM albums
+  speakAndSpell: "/DM albums/01_speakandspell_main.jpg",
+  brokenFrame: "/DM albums/02_abrokenframe_main.jpg",
+  constructionTime: "/DM albums/03_constructiontimeagain_main.jpg",
+  peopleArePeople: "/DM albums/04_peoplearepeople_main.jpg",
+  someGreatReward: "/DM albums/05_somegreatreward_main.jpg",
+  catchingUp: "/DM albums/06_catchingupwithdepechemode_main.jpg",
+  singles8185: "/DM albums/07_thesingles8185_main.jpg",
+  blackCelebration: "/DM albums/08_blackcelebration_main.jpg",
+  musicMasses: "/DM albums/09_musicforthemasses_main.jpg",
+  live101: "/DM albums/10_101_main.jpg",
+  violator: "/DM albums/11_violator_main.jpg",
+  songsFaith: "/DM albums/12_songsoffaithanddevotion_main.jpg",
+  songsFaithLive: "/DM albums/13_songsoffaithanddevotionlive_main.jpg",
+  ultra: "/DM albums/14_ultra_main.jpg",
+  singles8698: "/DM albums/15_thesingles8698_main.jpg",
+  singles8185v2: "/DM albums/16_thesingles8185_main.jpg",
+  exciter: "/DM albums/17_exciter_main.jpg",
+  remixes8104: "/DM albums/18_remixes8104_main.jpg",
+  playingAngel: "/DM albums/19_playingtheangel_main.jpg",
+  bestOfVol1: "/DM albums/20_thebestofdepechemodevolume1_main.jpg",
+  soundsUniverse: "/DM albums/21_soundsoftheuniverse_main.jpg",
+  remixes2: "/DM albums/22_remixes28111_main.jpg",
+  deltaMachine: "/DM albums/23_deltamachine_main.jpg",
+  liveInBerlin: "/DM albums/24_liveinberlinsoundtrack_main.jpg",
+  spirit: "/DM albums/25_spirit_main.jpg",
+  mementoMori: "/DM albums/26_mementomori_main.jpg",
+  mementoMoriMexico: "/DM albums/27_memento_mori_mexico_city_main.jpg",
   
   // Duran Duran
-  duranDuran: "https://upload.wikimedia.org/wikipedia/en/f/fd/Duran_Duran_%28album%29_cover.jpg",
-  rio: "https://upload.wikimedia.org/wikipedia/en/2/26/Duran_Duran_-_Rio.png",
-  sevenRagged: "https://upload.wikimedia.org/wikipedia/en/c/c9/Duran_Duran_-_Seven_and_the_Ragged_Tiger.png",
-  notorious: "https://upload.wikimedia.org/wikipedia/en/2/26/Duran_duran_-_notorious.jpg",
-  bigThing: "https://upload.wikimedia.org/wikipedia/en/0/0e/Duran_Duran_-_Big_Thing.jpg",
-  liberty: "https://upload.wikimedia.org/wikipedia/en/6/6e/Duran_Duran_Liberty.jpg",
-  weddingAlbum: "https://upload.wikimedia.org/wikipedia/en/c/cc/Duran_Duran_-_Duran_Duran_%28The_Wedding_Album%29.png",
+  duranDuran: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  rio: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
+  sevenRagged: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
+  notorious: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  bigThing: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400",
+  liberty: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  weddingAlbum: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
   
   // a-ha
-  huntingHighLow: "https://upload.wikimedia.org/wikipedia/en/8/86/A-ha_Hunting_High_and_Low.jpg",
-  scoundrelDays: "https://upload.wikimedia.org/wikipedia/en/7/79/A-ha_Scoundrel_Days.jpg",
-  stayRoads: "https://upload.wikimedia.org/wikipedia/en/6/6f/A-ha_Stay_on_These_Roads.jpg",
-  eastSun: "https://upload.wikimedia.org/wikipedia/en/d/df/A-ha_East_of_the_Sun%2C_West_of_the_Moon.jpg",
-  memorialBeach: "https://upload.wikimedia.org/wikipedia/en/6/6c/A-ha_Memorial_Beach.jpg",
+  huntingHighLow: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
+  scoundrelDays: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  stayRoads: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400",
+  eastSun: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  memorialBeach: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
   
   // INXS
-  inxsDebut: "https://upload.wikimedia.org/wikipedia/en/2/2f/INXS_-_INXS.jpg",
-  shabooh: "https://upload.wikimedia.org/wikipedia/en/6/63/INXS_-_Shabooh_Shoobah.jpg",
-  theSwing: "https://upload.wikimedia.org/wikipedia/en/a/a8/INXS-TheSwing.jpg",
-  listenThieves: "https://upload.wikimedia.org/wikipedia/en/4/42/INXS_-_Listen_Like_Thieves.jpg",
-  kick: "https://upload.wikimedia.org/wikipedia/en/1/16/INXS_-_Kick.png",
-  x: "https://upload.wikimedia.org/wikipedia/en/8/8c/INXS_-_X.png",
+  inxsDebut: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
+  shabooh: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  theSwing: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400",
+  listenThieves: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  kick: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
+  x: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
   
   // Modern Talking
-  firstAlbum: "https://upload.wikimedia.org/wikipedia/en/f/f7/Modern_Talking_-_The_1st_Album.jpg",
-  letsTalkLove: "https://upload.wikimedia.org/wikipedia/en/d/df/Modern_Talking_-_Let%27s_Talk_About_Love.jpg",
-  readyRomance: "https://upload.wikimedia.org/wikipedia/en/d/d9/Modern_Talking_-_Ready_for_Romance.jpg",
-  middleNowhere: "https://upload.wikimedia.org/wikipedia/en/7/77/Modern_Talking_-_In_the_Middle_of_Nowhere.jpg",
-  romanticWarriors: "https://upload.wikimedia.org/wikipedia/en/e/e9/Modern_Talking_-_Romantic_Warriors.jpg",
-  gardenVenus: "https://upload.wikimedia.org/wikipedia/en/6/62/Modern_Talking_-_In_the_Garden_of_Venus.jpg",
-  backForGood: "https://upload.wikimedia.org/wikipedia/en/5/5f/Modern_Talking_-_Back_for_Good.jpg",
+  firstAlbum: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  letsTalkLove: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400",
+  readyRomance: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
+  middleNowhere: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
+  romanticWarriors: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
+  gardenVenus: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
+  backForGood: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400",
   
   // Generic placeholder for others
   generic1: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
@@ -131,7 +143,7 @@ export const artists: Artist[] = [
       "Были включены в Зал славы рок-н-ролла в 2020 году"
     ],
     members: ["Dave Gahan", "Martin Gore", "Andy Fletcher†", "Vince Clarke (ранее)", "Alan Wilder (ранее)"],
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg/640px-Depeche_Mode_-_Global_Spirit_Tour_-_Rexall_Place.jpg",
+    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg",
     albums: [
       { 
         title: "Speak & Spell", 
@@ -313,7 +325,7 @@ export const artists: Artist[] = [
       "Были на обложке журнала Rolling Stone 6 раз"
     ],
     members: ["Simon Le Bon", "Nick Rhodes", "John Taylor", "Roger Taylor", "Andy Taylor (ранее)"],
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Duran_Duran_%282011%29.jpg/640px-Duran_Duran_%282011%29.jpg",
+    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg",
     albums: [
       { title: "Duran Duran", year: 1981, cover: albumCovers.duranDuran, type: "album", tracks: ["Planet Earth", "Girls on Film", "Careless Memories", "Night Boat", "Sound of Thunder", "Friends of Mine", "Tel Aviv", "Anyone Out There", "To the Shore"] },
       { title: "Rio", year: 1982, cover: albumCovers.rio, type: "album", tracks: ["Rio", "Hungry Like the Wolf", "Save a Prayer", "Hold Back the Rain", "New Religion", "My Own Way", "Lonely in Your Nightmare", "The Chauffeur", "Last Chance on the Stairway"] },
@@ -348,7 +360,7 @@ export const artists: Artist[] = [
       "Анимированный клип 'Take On Me' стоил 100 000 долларов — огромная сумма для того времени"
     ],
     members: ["Morten Harket", "Magne Furuholmen", "Pål Waaktaar-Savoy"],
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A-ha_in_Bergen_%282010%29.jpg/640px-A-ha_in_Bergen_%282010%29.jpg",
+    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg",
     albums: [
       { title: "Hunting High and Low", year: 1985, cover: albumCovers.huntingHighLow, type: "album", tracks: ["Take On Me", "Train of Thought", "Hunting High and Low", "The Blue Sky", "Living a Boy's Adventure Tale", "The Sun Always Shines on T.V.", "And You Tell Me", "Love Is Reason", "Dream Myself Alive", "Here I Stand and Face the Rain"] },
       { title: "Scoundrel Days", year: 1986, cover: albumCovers.scoundrelDays, type: "album", tracks: ["Scoundrel Days", "The Swing of Things", "I've Been Losing You", "October", "Manhattan Skyline", "Cry Wolf", "We're Looking for the Whales", "The Weight of the Wind", "Maybe Maybe", "Soft Rains of April"] },
@@ -379,7 +391,7 @@ export const artists: Artist[] = [
       "Группа названа в честь словосочетания 'in excess' (чрезмерность)"
     ],
     members: ["Michael Hutchence†", "Andrew Farriss", "Tim Farriss", "Jon Farriss", "Kirk Pengilly", "Garry Gary Beers"],
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Inxs_brisbane_jan_17_2007.jpg/640px-Inxs_brisbane_jan_17_2007.jpg",
+    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg",
     albums: [
       { title: "INXS", year: 1980, cover: albumCovers.inxsDebut, type: "album", tracks: ["On a Bus", "Doctor", "Just Keep Walking", "Learn to Smile", "Jumping", "In Vain", "Roller Skating", "Body Language", "Newsreel Babies", "Wishy Washy"] },
       { title: "Underneath the Colours", year: 1981, cover: albumCover2, type: "album", tracks: ["Stay Young", "Horizons", "Big Go Go", "Underneath the Colours", "Fair Weather Ahead", "Night of Rebellion", "Follow", "Barbarian", "Just to Learn Again", "What Would You Do"] },
@@ -409,7 +421,7 @@ export const artists: Artist[] = [
       "Их песни до сих пор являются хитами на дискотеках"
     ],
     members: ["Thomas Anders", "Dieter Bohlen"],
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thomas_Anders_2011.jpg/480px-Thomas_Anders_2011.jpg",
+    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg",
     albums: [
       { title: "The 1st Album", year: 1985, cover: albumCovers.firstAlbum, type: "album", tracks: ["You're My Heart, You're My Soul", "You Can Win If You Want", "There's Too Much Blue in Missing You", "Lucky Guy", "Do You Wanna", "One in a Million", "Heaven Will Know", "With a Little Love", "The Night Is Yours – The Night Is Mine", "Keep Love Alive"] },
       { title: "Let's Talk About Love", year: 1985, cover: albumCovers.letsTalkLove, type: "album", tracks: ["Cheri, Cheri Lady", "Atlantis Is Calling (S.O.S. for Love)", "Lonely Tears in Chinatown", "Just Like an Angel", "Let's Talk About Love", "With a Little Love", "Love Don't Live Here Anymore", "You're the Lady of My Heart", "Diamonds Never Made a Lady", "It's Christmas"] },
