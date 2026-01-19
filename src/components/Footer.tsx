@@ -43,7 +43,7 @@ const Footer = () => {
             <h3 className="font-display text-xl font-bold tracking-wider text-slate-700">Contacts</h3>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">
               <Mail className="w-4 h-4 text-retro-blue" />
-              <span className="text-vinyl-black">info@offmail.ru</span>
+              <span className="text-vinyl-black">music@ooffmail.ru</span>
             </div>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">
               <Music className="w-4 h-4 text-retro-blue" />
