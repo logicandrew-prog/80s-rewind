@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* Featured Artists Section */}
-      <section className="py-20 text-retro-cream bg-orange-100">
+      <section className="py-20 text-retro-cream bg-[#f8f6f2]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
@@ -159,7 +159,7 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-retro-blue to-retro-blue/80 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-100 text-muted bg-orange-100">
+        <div className="absolute inset-0 opacity-100 text-muted bg-orange-50">
           
           
         </div>
