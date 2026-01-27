@@ -36,7 +36,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 bg-orange-100">
+      <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
             {allPhotos.map((photo, index) => <div key={index} onClick={() => setSelectedPhoto(photo)} className="break-inside-avoid group relative overflow-hidden rounded-lg cursor-pointer">
