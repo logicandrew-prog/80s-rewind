@@ -28,7 +28,7 @@ const Discography = () => {
       </section>
 
       {/* Discography Grid */}
-      <section className="py-16 bg-orange-100">
+      <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           {artists.map(artist => <div key={artist.id} className="mb-16">
               {/* Artist Header */}
