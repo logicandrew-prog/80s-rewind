@@ -84,7 +84,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {genres.map((genre, index) => <div key={genre.name} className="border border-border rounded-lg p-8 card-hover relative overflow-hidden group bg-retro-cream">
+            {genres.map((genre, index) => <div key={genre.name} className="border border-border rounded-lg p-8 card-hover relative overflow-hidden group bg-primary-foreground">
                 {/* Index Number */}
                 <span className="absolute top-4 right-4 font-display text-6xl transition-colors text-[#ff8c00]/[0.19]">
                   0{index + 1}
@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* Featured Artists Section */}
-      <section className="py-20 text-retro-cream bg-[#f8f6f2]">
+      <section className="py-20 text-destructive-foreground bg-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
@@ -139,19 +139,19 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <span className="font-display text-5xl text-[#ff8c00]">10+</span>
-              <p className="text-sm mt-2 text-retro-cream">Исполнителей</p>
+              <p className="text-sm mt-2 text-primary-foreground">Исполнителей</p>
             </div>
             <div>
               <span className="font-display text-5xl text-[#ff8c00]">50+</span>
-              <p className="text-sm mt-2 text-retro-cream">Альбомов</p>
+              <p className="text-sm mt-2 text-primary-foreground">Альбомов</p>
             </div>
             <div>
               <span className="font-display text-5xl text-[#ff8c00]">200+</span>
-              <p className="text-sm mt-2 text-retro-cream">Треков</p>
+              <p className="text-sm mt-2 text-primary-foreground">Треков</p>
             </div>
             <div>
               <span className="font-display text-5xl text-[#ff8c00]">80-е</span>
-              <p className="text-sm mt-2 text-retro-cream">Золотая эра</p>
+              <p className="text-sm mt-2 text-primary-foreground">Золотая эра</p>
             </div>
           </div>
         </div>
