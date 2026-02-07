@@ -18,66 +18,82 @@ export interface Artist {
   albums: Album[];
   photos: { url: string; caption: string }[];
   mainPhoto: string;
+  logoUrl?: string;
 }
 
-// Artist photos - using actual band photos from Last.fm CDN
+// Artist photos - using local files from repository
 const artistPhotos = {
   depeche: [
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg", caption: "Концертное выступление" },
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg", caption: "Студийная сессия" }
+    { url: "/DMphotos/depeche_mode1.jpg", caption: "Depeche Mode" },
+    { url: "/DMphotos/depeche2.jpg", caption: "Концертное выступление" },
+    { url: "/DMphotos/depeche3.jpg", caption: "Промо-фото" },
+    { url: "/DMphotos/violator_1920_9.jpg", caption: "Эпоха Violator" },
+    { url: "/DMphotos/ultra_1920_9.jpg", caption: "Эпоха Ultra" },
+    { url: "/DMphotos/musicforthemasses_1920_9.jpg", caption: "Music for the Masses тур" },
+    { url: "/DMphotos/playingtheangel_1920_3.jpg", caption: "Playing the Angel тур" },
+    { url: "/DMphotos/playingtheangel_1920_12.jpg", caption: "Playing the Angel промо" },
+    { url: "/DMphotos/1_leave_in_silence.jpg", caption: "Leave in Silence" },
+    { url: "/DMphotos/2.jpg", caption: "Студийная сессия" },
+    { url: "/DMphotos/3.jpg", caption: "Фотосессия" },
+    { url: "/DMphotos/7.jpg", caption: "На сцене" },
+    { url: "/DMphotos/7-2.jpg", caption: "Концерт" },
+    { url: "/DMphotos/13.jpg", caption: "Промо" },
+    { url: "/DMphotos/13-2.jpg", caption: "Фото группы" },
+    { url: "/DMphotos/18.jpg", caption: "Архивное фото" },
+    { url: "/80s_photos/depeche1.jpg", caption: "Depeche Mode 80-е" }
   ],
   duran: [
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg", caption: "На сцене" },
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg", caption: "Концерт" }
+    { url: "/80s_photos/duran duran1.jpg", caption: "Duran Duran" },
+    { url: "/80s_photos/duran duran2.jpg", caption: "Duran Duran промо" }
   ],
   aha: [
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg", caption: "Концерт в Бергене" },
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg", caption: "Morten Harket" }
+    { url: "/80s_photos/aha1.jpg", caption: "a-ha" }
   ],
   inxs: [
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg", caption: "На сцене" },
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg", caption: "Концерт" }
+    { url: "/80s_photos/inxs1.jpg", caption: "INXS" }
   ],
   modern: [
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg", caption: "Thomas Anders" },
-    { url: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg", caption: "Dieter Bohlen" }
+    { url: "/80s_photos/modern talking1.jpg", caption: "Modern Talking" }
   ],
   generic: [
-    { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600", caption: "На сцене" },
-    { url: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600", caption: "Промо-фото" }
+    { url: "/80s_photos/frankie goes to hollywood1.jpg", caption: "80-е годы" }
   ]
 };
 
 // Album covers - using local files for DM, placeholders for others
 const albumCovers = {
-  // Depeche Mode - local files from public/DM albums
-  speakAndSpell: "/DM albums/01_speakandspell_main.jpg",
-  brokenFrame: "/DM albums/02_abrokenframe_main.jpg",
-  constructionTime: "/DM albums/03_constructiontimeagain_main.jpg",
-  peopleArePeople: "/DM albums/04_peoplearepeople_main.jpg",
-  someGreatReward: "/DM albums/05_somegreatreward_main.jpg",
-  catchingUp: "/DM albums/06_catchingupwithdepechemode_main.jpg",
-  singles8185: "/DM albums/07_thesingles8185_main.jpg",
-  blackCelebration: "/DM albums/08_blackcelebration_main.jpg",
-  musicMasses: "/DM albums/09_musicforthemasses_main.jpg",
-  live101: "/DM albums/10_101_main.jpg",
-  violator: "/DM albums/11_violator_main.jpg",
-  songsFaith: "/DM albums/12_songsoffaithanddevotion_main.jpg",
-  songsFaithLive: "/DM albums/13_songsoffaithanddevotionlive_main.jpg",
-  ultra: "/DM albums/14_ultra_main.jpg",
-  singles8698: "/DM albums/15_thesingles8698_main.jpg",
-  singles8185v2: "/DM albums/16_thesingles8185_main.jpg",
-  exciter: "/DM albums/17_exciter_main.jpg",
-  remixes8104: "/DM albums/18_remixes8104_main.jpg",
-  playingAngel: "/DM albums/19_playingtheangel_main.jpg",
-  bestOfVol1: "/DM albums/20_thebestofdepechemodevolume1_main.jpg",
-  soundsUniverse: "/DM albums/21_soundsoftheuniverse_main.jpg",
-  remixes2: "/DM albums/22_remixes28111_main.jpg",
-  deltaMachine: "/DM albums/23_deltamachine_main.jpg",
-  liveInBerlin: "/DM albums/24_liveinberlinsoundtrack_main.jpg",
-  spirit: "/DM albums/25_spirit_main.jpg",
-  mementoMori: "/DM albums/26_mementomori_main.jpg",
-  mementoMoriMexico: "/DM albums/27_memento_mori_mexico_city_main.jpg",
+  // Depeche Mode - local files from public/DMalbums
+  speakAndSpell: "/DMalbums/01_speakandspell_main.jpg",
+  brokenFrame: "/DMalbums/02_abrokenframe_main.jpg",
+  constructionTime: "/DMalbums/03_constructiontimeagain_main.jpg",
+  peopleArePeople: "/DMalbums/04_peoplearepeople_main.jpg",
+  someGreatReward: "/DMalbums/05_somegreatreward_main.jpg",
+  catchingUp: "/DMalbums/06_catchingupwithdepechemode_main.jpg",
+  singles8185: "/DMalbums/07_thesingles8185_main.jpg",
+  blackCelebration: "/DMalbums/08_blackcelebration_main.jpg",
+  musicMasses: "/DMalbums/09_musicforthemasses_main.jpg",
+  live101: "/DMalbums/10_101_main.jpg",
+  violator: "/DMalbums/11_violator_main.jpg",
+  songsFaith: "/DMalbums/12_songsoffaithanddevotion_main.jpg",
+  songsFaithLive: "/DMalbums/13_songsoffaithanddevotionlive_main.jpg",
+  ultra: "/DMalbums/14_ultra_main.jpg",
+  singles8698: "/DMalbums/15_thesingles8698_main.jpg",
+  singles8185v2: "/DMalbums/16_thesingles8185_main.jpg",
+  exciter: "/DMalbums/17_exciter_main.jpg",
+  remixes8104: "/DMalbums/18_remixes8104_main.jpg",
+  playingAngel: "/DMalbums/19_playingtheangel_main.jpg",
+  bestOfVol1: "/DMalbums/20_thebestofdepechemodevolume1_main.jpg",
+  soundsUniverse: "/DMalbums/21_soundsoftheuniverse_main.jpg",
+  remixes2: "/DMalbums/22_remixes28111_main.jpg",
+  deltaMachine: "/DMalbums/23_deltamachine_main.jpg",
+  liveInBerlin: "/DMalbums/24_liveinberlinsoundtrack_main.jpg",
+  spirit: "/DMalbums/25_spirit_main.jpg",
+  mementoMori: "/DMalbums/26_mementomori_main.jpg",
+  mementoMoriMexico: "/DMalbums/27_memento_mori_mexico_city_main.jpg",
+  // DM logos
+  dmLogo: "/DMalbums/DM_logo.jpg",
+  dmLogo2: "/DMalbums/DM_logo2.jpg",
+  dmLogo3: "/DMalbums/DM_logo3.jpg",
   
   // Duran Duran
   duranDuran: "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
@@ -143,7 +159,8 @@ export const artists: Artist[] = [
       "Были включены в Зал славы рок-н-ролла в 2020 году"
     ],
     members: ["Dave Gahan", "Martin Gore", "Andy Fletcher†", "Vince Clarke (ранее)", "Alan Wilder (ранее)"],
-    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/b38eac0396d94965dd5c54e69be8a4c8.jpg",
+    mainPhoto: "/DMphotos/depeche_mode1.jpg",
+    logoUrl: "/logos/depeche-mode.png",
     albums: [
       { 
         title: "Speak & Spell", 
@@ -325,7 +342,8 @@ export const artists: Artist[] = [
       "Были на обложке журнала Rolling Stone 6 раз"
     ],
     members: ["Simon Le Bon", "Nick Rhodes", "John Taylor", "Roger Taylor", "Andy Taylor (ранее)"],
-    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/14092b70f03a48e79207e74843799676.jpg",
+    mainPhoto: "/80s_photos/duran duran1.jpg",
+    logoUrl: "/logos/duran-duran.png",
     albums: [
       { title: "Duran Duran", year: 1981, cover: albumCovers.duranDuran, type: "album", tracks: ["Planet Earth", "Girls on Film", "Careless Memories", "Night Boat", "Sound of Thunder", "Friends of Mine", "Tel Aviv", "Anyone Out There", "To the Shore"] },
       { title: "Rio", year: 1982, cover: albumCovers.rio, type: "album", tracks: ["Rio", "Hungry Like the Wolf", "Save a Prayer", "Hold Back the Rain", "New Religion", "My Own Way", "Lonely in Your Nightmare", "The Chauffeur", "Last Chance on the Stairway"] },
@@ -360,7 +378,7 @@ export const artists: Artist[] = [
       "Анимированный клип 'Take On Me' стоил 100 000 долларов — огромная сумма для того времени"
     ],
     members: ["Morten Harket", "Magne Furuholmen", "Pål Waaktaar-Savoy"],
-    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/43b749d1656b46b5a372d8a0f9b3b890.jpg",
+    mainPhoto: "/80s_photos/aha1.jpg",
     albums: [
       { title: "Hunting High and Low", year: 1985, cover: albumCovers.huntingHighLow, type: "album", tracks: ["Take On Me", "Train of Thought", "Hunting High and Low", "The Blue Sky", "Living a Boy's Adventure Tale", "The Sun Always Shines on T.V.", "And You Tell Me", "Love Is Reason", "Dream Myself Alive", "Here I Stand and Face the Rain"] },
       { title: "Scoundrel Days", year: 1986, cover: albumCovers.scoundrelDays, type: "album", tracks: ["Scoundrel Days", "The Swing of Things", "I've Been Losing You", "October", "Manhattan Skyline", "Cry Wolf", "We're Looking for the Whales", "The Weight of the Wind", "Maybe Maybe", "Soft Rains of April"] },
@@ -391,7 +409,8 @@ export const artists: Artist[] = [
       "Группа названа в честь словосочетания 'in excess' (чрезмерность)"
     ],
     members: ["Michael Hutchence†", "Andrew Farriss", "Tim Farriss", "Jon Farriss", "Kirk Pengilly", "Garry Gary Beers"],
-    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/93122c16111e4e7381284d720b08053c.jpg",
+    mainPhoto: "/80s_photos/inxs1.jpg",
+    logoUrl: "/logos/inxs.png",
     albums: [
       { title: "INXS", year: 1980, cover: albumCovers.inxsDebut, type: "album", tracks: ["On a Bus", "Doctor", "Just Keep Walking", "Learn to Smile", "Jumping", "In Vain", "Roller Skating", "Body Language", "Newsreel Babies", "Wishy Washy"] },
       { title: "Underneath the Colours", year: 1981, cover: albumCover2, type: "album", tracks: ["Stay Young", "Horizons", "Big Go Go", "Underneath the Colours", "Fair Weather Ahead", "Night of Rebellion", "Follow", "Barbarian", "Just to Learn Again", "What Would You Do"] },
@@ -421,7 +440,8 @@ export const artists: Artist[] = [
       "Их песни до сих пор являются хитами на дискотеках"
     ],
     members: ["Thomas Anders", "Dieter Bohlen"],
-    mainPhoto: "https://lastfm.freetls.fastly.net/i/u/770x433/7492c6488d77478fb3709b1f7c006575.jpg",
+    mainPhoto: "/80s_photos/modern talking1.jpg",
+    logoUrl: "/logos/modern-talking.png",
     albums: [
       { title: "The 1st Album", year: 1985, cover: albumCovers.firstAlbum, type: "album", tracks: ["You're My Heart, You're My Soul", "You Can Win If You Want", "There's Too Much Blue in Missing You", "Lucky Guy", "Do You Wanna", "One in a Million", "Heaven Will Know", "With a Little Love", "The Night Is Yours – The Night Is Mine", "Keep Love Alive"] },
       { title: "Let's Talk About Love", year: 1985, cover: albumCovers.letsTalkLove, type: "album", tracks: ["Cheri, Cheri Lady", "Atlantis Is Calling (S.O.S. for Love)", "Lonely Tears in Chinatown", "Just Like an Angel", "Let's Talk About Love", "With a Little Love", "Love Don't Live Here Anymore", "You're the Lady of My Heart", "Diamonds Never Made a Lady", "It's Christmas"] },
@@ -452,7 +472,8 @@ export const artists: Artist[] = [
       "Название символизировало меланхолию и синий цвет тоски"
     ],
     members: ["Dieter Bohlen"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "/80s_photos/frankie goes to hollywood1.jpg",
+    logoUrl: "/logos/blue-system.png",
     albums: [
       { title: "Walking on a Rainbow", year: 1987, cover: albumCover, type: "album", tracks: ["Sorry Little Sarah", "On the Floor Tonight", "Silent Water", "Under My Skin", "Walking on a Rainbow", "Love Suite", "My Bed Is Too Big", "Follow Me", "Sorry Little Sarah (Reprise)", "Gangster Love"] },
       { title: "Body Heat", year: 1988, cover: albumCover2, type: "album", tracks: ["My Bed Is Too Big", "Love Me on the Rocks", "Body Heat", "Operator", "Déjà Vu", "Magic Mystery", "28° C (Too Hot for September)", "When Sarah Smiles", "Shame, Shame, Shame", "She's a Lady"] },
@@ -479,7 +500,8 @@ export const artists: Artist[] = [
       "Группа воссоединялась для ретро-концертов в 2000-х"
     ],
     members: ["Manfred Plachy", "Gerold Heilig", "Herbert Schnedl"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "/80s_photos/frankie goes to hollywood1.jpg",
+    logoUrl: "/logos/joy.png",
     albums: [
       { title: "Joy and Tears", year: 1986, cover: albumCover, type: "album", tracks: ["Touch by Touch", "Valerie", "Hello", "Japanese Girls", "Let Me Dream", "Tomorrow", "Sunshine Reggae", "Midnight Love", "Baby Baby", "One More Time"] },
       { title: "Wonderful", year: 1987, cover: albumCover2, type: "album", tracks: ["Lovely Dream", "Show Me the Way", "Wonderful", "Breaking Hearts", "Moonlight", "Dancing Under the Moon", "Follow Me", "Heart on Fire", "I Love You So", "Night of the Stars"] }
@@ -501,7 +523,8 @@ export const artists: Artist[] = [
       "Их футуристический имидж вдохновил многих художников"
     ],
     members: ["Tony James", "Martin Degville", "Neal X", "Chris Kavanagh", "Ray Mayhew"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "/80s_photos/frankie goes to hollywood1.jpg",
+    logoUrl: "/logos/sigue-sigue-sputnik.png",
     albums: [
       { title: "Flaunt It", year: 1986, cover: albumCover, type: "album", tracks: ["Love Missile F1-11", "Atari Baby", "Sex Bomb Boogie", "21st Century Boy", "Massive Retaliation", "Rocket Miss U.S.A.", "Sci-Fi Baby!", "She's My Man", "Teenage Thunder", "Is This the Future?"] },
       { title: "Dress for Excess", year: 1988, cover: albumCover2, type: "album", tracks: ["Success", "Dancerama", "Albinoni vs. Star Wars", "Hey Jane", "Boom Boom Satellite", "Rio Rocks", "M*A*D*", "Pirate Doubloon Dancerama", "I Rock the World", "Ultraviolence"] }
@@ -523,7 +546,7 @@ export const artists: Artist[] = [
       "Их концерты отличались военной эстетикой и провокационностью"
     ],
     members: ["Jean-Luc De Meyer", "Daniel Bressanutti", "Patrick Codenys", "Richard Jonckheere (ранее)"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "/80s_photos/frankie goes to hollywood1.jpg",
     albums: [
       { title: "Geography", year: 1982, cover: albumCover, type: "album", tracks: ["Operating Tracks", "Kinetics", "Kampfbereit", "Art & Strategy", "U-Men", "Geography", "Black White Blue", "Young Guys", "Electronomic", "Take One"] },
       { title: "No Comment", year: 1984, cover: albumCover2, type: "album", tracks: ["No Shuffle", "Commando Mix", "Deceit", "Politics of Pressure", "Work 242", "Commando Remix", "No Shuffle (Special Forces Mix)", "Take One (U.S. Army Remix)"] },
@@ -551,7 +574,8 @@ export const artists: Artist[] = [
       "Их влияние чувствуется в современной электронной поп-музыке"
     ],
     members: ["Pete Burns†", "Steve Coy†", "Mike Percy", "Tim Lever"],
-    mainPhoto: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600",
+    mainPhoto: "/80s_photos/frankie goes to hollywood1.jpg",
+    logoUrl: "/logos/dead-or-alive.png",
     albums: [
       { title: "Sophisticated Boom Boom", year: 1984, cover: albumCover, type: "album", tracks: ["That's the Way (I Like It)", "I Wanna Be Your Toy", "Selfish Side", "What I Want", "Cake and Eat It", "Don't Cry", "You Make Me Wanna", "How Do I Feel", "Misty Circles", "Throw Your Arms Around Me"] },
       { title: "Youthquake", year: 1985, cover: albumCover2, type: "album", tracks: ["You Spin Me Round (Like a Record)", "Lover Come Back to Me", "In Too Deep", "My Heart Goes Bang (Get Me to the Doctor)", "I'd Do Anything", "What I Want (Remix)", "Big Daddy of the Rhythm", "This Strangers Love", "Cake and Eat It (Remix)", "D.J. Hit That Button"] },
