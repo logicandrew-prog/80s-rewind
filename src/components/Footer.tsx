@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Disc, Mail, Music } from "lucide-react";
 const Footer = () => {
-  return <footer className="border-t border-retro-blue/30 text-[#344256] bg-[#344256]">
+  return <footer className="border-t border-retro-blue/30 text-[#344256] bg-[#1d283a]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
