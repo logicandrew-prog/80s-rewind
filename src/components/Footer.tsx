@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group pb-0">
               <Disc className="opacity-80 text-vinyl-black pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid pb-0 h-[18px] w-[18px]" />
-              <span className="font-display font-bold tracking-wider text-left text-3xl text-slate-700">orangeblue</span>
+              <span className="font-display font-bold tracking-wider text-left text-3xl text-[#ff8c00]">orangeblue</span>
             </Link>
             <p className="text-sm leading-relaxed text-vinyl-black">
               Портал, посвящённый легендарной музыке 80-х годов. 
