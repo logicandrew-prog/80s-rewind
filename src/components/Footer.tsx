@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Disc, Mail, Music } from "lucide-react";
 const Footer = () => {
-  return <footer className="border-t border-retro-blue/30 bg-secondary-foreground">
+  return <footer className="border-t border-retro-blue/30 bg-[#ff8c00] text-accent">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3 group pb-0">
-              <Disc className="opacity-80 pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid pb-0 h-[18px] w-[18px] text-primary" />
+              <Disc className="opacity-80 text-vinyl-black pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid pb-0 h-[18px] w-[18px]" />
               <span className="font-display font-bold tracking-wider text-left text-3xl text-slate-700">orangeblue</span>
             </Link>
             <p className="text-sm leading-relaxed text-vinyl-black">
@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-display text-xl font-bold tracking-wider text-slate-700">Contacts</h3>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">
-              <Mail className="w-4 h-4 text-primary" />
+              <Mail className="w-4 h-4 text-retro-blue" />
               <span className="text-vinyl-black">music@ooffmail.ru</span>
             </div>
             <div className="flex items-center gap-2 text-retro-blue/80 text-sm">

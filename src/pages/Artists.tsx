@@ -5,7 +5,7 @@ import { Music } from "lucide-react";
 const Artists = () => {
   return <Layout className="bg-slate-800">
       {/* Hero */}
-      <section className="py-16 bg-slate-800">
+      <section className="py-16 text-secondary-foreground bg-secondary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <Music className="w-6 h-6 text-[#ff8c00]" />
