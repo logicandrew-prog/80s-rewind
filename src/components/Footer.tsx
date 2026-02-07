@@ -10,7 +10,7 @@ const Footer = () => {
               <Disc className="opacity-80 text-vinyl-black pt-0 mt-[5px] rounded-xl shadow-none border-slate-800 border-2 border-solid pb-0 h-[18px] w-[18px]" />
               <span className="font-display font-bold tracking-wider text-left text-3xl text-slate-700">orangeblue</span>
             </Link>
-            <p className="text-sm leading-relaxed text-vinyl-black">
+            <p className="text-sm leading-relaxed text-secondary-foreground">
               Портал, посвящённый легендарной музыке 80-х годов. 
               Откройте для себя эпоху синтезаторов, виниловых пластинок и неповторимого стиля.
             </p>
@@ -18,7 +18,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-display text-xl font-bold tracking-wider text-gray-700">​Site map   </h3>
+            <h3 className="font-display text-xl font-bold tracking-wider text-[#344256]">​Site map   </h3>
             <nav className="flex flex-col gap-2">
               <Link to="/" className="transition-colors text-sm text-vinyl-black">
                 Главная
