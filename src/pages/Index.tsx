@@ -33,7 +33,7 @@ const Index = () => {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <Radio className="animate-pulse text-[#ff8c00] w-[40px] h-[40px]" />
-              <span className="font-body text-sm tracking-widest uppercase text-muted">
+              <span className="font-body text-sm tracking-widest uppercase text-primary-foreground">
                 Музыкальный портал
               </span>
             </div>
